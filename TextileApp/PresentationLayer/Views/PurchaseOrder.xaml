@@ -1,0 +1,286 @@
+﻿<Window x:Class="TextileApp.Views.PurchaseOrder"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Accounting="clr-namespace:TextileApp.ViewModels"
+    xmlns:ListView="clr-namespace:TextileApp"        
+    xmlns:UC="clr-namespace:TextileApp.UserControls"
+    Title="Purchase Order"
+	Width="1000" Height="650"
+    Style="{DynamicResource ModalWindowStyle}"
+    FontFamily="Arial" FontSize="11" Foreground="White"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" Background="{x:Null}"
+    WindowStartupLocation="CenterScreen" ShowInTaskbar="False" RenderTransformOrigin="0.5,0.5">
+    <Window.Resources>
+        <!--Strat of my defined codes -->
+
+        <Storyboard x:Key="StoryboardEnterance">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="510" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-30" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0" KeySpline="0,0,0,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardUnitFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardGroupFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardProductFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardEntrance">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="230" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-30" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0" KeySpline="0,0,0,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <DataTemplate x:Key="AccountNameColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=AccountName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="TranPurchaseOrderIdColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=TranPurchaseOrderId}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="DateColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=CurrDate}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="WeaverNameColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=WeaverName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="QualityNnameColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=QualityName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="BrokerNameColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=BrokerName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="CDColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=CD}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="ThanColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=ThanCount}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="RateColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Rate}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="SideColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Side}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="PackingColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Packing}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="PendingThanColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=PendingThan}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+    </Window.Resources>
+    <Window.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform ScaleX="1" ScaleY="1"/>
+            <SkewTransform AngleX="0" AngleY="0"/>
+            <RotateTransform Angle="0"/>
+            <TranslateTransform X="0" Y="0"/>
+        </TransformGroup>
+    </Window.RenderTransform>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource StoryboardEntrance}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Window.CommandBindings>
+        <CommandBinding Command="Close"
+        Executed="CloseCommand_Executed"/>
+    </Window.CommandBindings>
+    <Window.DataContext>
+        <Accounting:TranPurchaseOrderViewModels />
+    </Window.DataContext>
+    <Grid Width="1000" Height="650">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Width="960" FontWeight="Bold" Grid.Row="1" Grid.Column="1" >
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Foreground="Orange" FontSize="16">Purchase Order Entry</TextBlock>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  Grid.Row="1" Grid.Column="1" Text="Confirmation Number : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.TranPurchaseOrderId, Mode=TwoWay}" Grid.Row="1" Grid.Column="2" Width="150" x:Name="txtConfirmationNumber" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="False" Foreground="Red" FontSize="16" />
+
+                <TextBlock  Grid.Row="1" Grid.Column="4" Text="Date : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <DatePicker SelectedDate="{Binding Path=objTranPurchaseOrder.CurrDate, Mode=TwoWay}" Grid.Row="1" Grid.Column="5" Width="150" x:Name="txtDate"  FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Viewer Name : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <UC:AutoCompleteTextBox Grid.Row="2" Grid.Column="2" Width="150" x:Name="cmbViewer" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="Quality : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <UC:AutoCompleteTextBox Grid.Row="3" Grid.Column="2" Width="150" x:Name="cmbQuality" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="Broker : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <UC:AutoCompleteTextBox Grid.Row="4" Grid.Column="2" Width="150" x:Name="cmbBroker" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="2" Grid.Column="4" Text="Than : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.ThanCount}" Grid.Row="2" Grid.Column="5" Width="150" x:Name="txtThan" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+<TextBlock Grid.Row="3" Grid.Column="4" Text="Rate : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.Rate}" Grid.Row="3" Grid.Column="5" Width="150" x:Name="txtRate" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="4" Grid.Column="4" Text="Side : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.Side}" Grid.Row="4" Grid.Column="5" Width="150" x:Name="txtSide" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="7" Text=" C/D[%] : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.CD}" Grid.Row="2" Grid.Column="8" Width="150" x:Name="txtCD" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+                <TextBlock Grid.Row="3" Grid.Column="7" Text=" Packing : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.Packing}" Grid.Row="3" Grid.Column="8" Width="150" x:Name="txtPaking" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                
+                <TextBlock Grid.Row="4" Grid.Column="7" Text="Pending Than : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranPurchaseOrder.PendingThan}" Grid.Row="4" Grid.Column="8" Width="150" x:Name="txtPendimgThan" FontSize="14" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+
+            </Grid>
+        </GroupBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="10" Name="LeftLine1" Background="White" Height="2" VerticalAlignment="Top" ></TextBlock>
+        <Canvas Grid.Row="5" Grid.Column="1" Height="25" Width="360" HorizontalAlignment="Left" Margin="0,5,0,5" VerticalAlignment="Top" >
+            <TextBlock Text="Sales Order Id : " FontWeight="Bold" FontSize="12" HorizontalAlignment="Right" Margin="0,6,0,0" VerticalAlignment="Center" />
+
+            <TextBox Canvas.Left="90" Width="150" Text="{Binding Path=objTranPurchaseOrder.SearchTranPurchaseOrderId}" x:Name="txtSeartchOrderId" Height="26" VerticalAlignment="Center" HorizontalAlignment="Left" FontWeight="Bold" Foreground="Red" FontSize="16">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding SearchTranPurchaseOrderCmd}" CommandParameter="{Binding Text, ElementName=txtSeartchOrderId}" Key="Enter" />
+                </TextBox.InputBindings>
+            </TextBox>
+
+            <Button Canvas.Left="250" Name="btnSearch" Command="{Binding SearchTranPurchaseOrderCmd}" CommandParameter="{Binding Text, ElementName=txtSeartchOrderId}" Style="{DynamicResource BlueButtonStyle}" Content="Search" Foreground="#FFFFFFFF" FontSize="12"
+                     FontWeight="Bold" IsDefault="False"  Width="72" Height="26" VerticalAlignment="Top"  />
+
+        </Canvas>
+
+        <Canvas Grid.Row="5" Grid.Column="1" Height="25" Width="240" HorizontalAlignment="Right" Margin="65,5,0,5" VerticalAlignment="Top" >
+
+            <Button Name="btnSave" Command="{Binding AddTranPurchaseOrderCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Save" Foreground="#FFFFFFFF" FontSize="12"
+                     FontWeight="Bold" IsDefault="False"  Width="72" Height="26" VerticalAlignment="Top"  />
+
+            <Button Name="btnReset" Command="{Binding ResetTranPurchaseOrderCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Reset" FontSize="12" FontWeight="Bold" 
+                    Canvas.Left="84" Foreground="#FFFFFFFF" IsDefault="False" Width="72" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            <Button Name="btnDelete" Command="{Binding DeleteTranPurchaseOrderCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Delete" FontSize="12" FontWeight="Bold" 
+                    Canvas.Left="168" Foreground="#FFFFFFFF" IsDefault="False" Width="72" Height="26" VerticalAlignment="Top" FontFamily="Arial" />
+
+        </Canvas>
+        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="10" Name="LeftLine" Background="White" Height="2" VerticalAlignment="Top" ></TextBlock>
+
+        <Canvas Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Width="960" Grid.RowSpan="8" Height="250" HorizontalAlignment="Left">
+            <Border BorderThickness="1" BorderBrush="White" >
+                <ListView:SortableListView Height="250" Width="960" HorizontalAlignment="Left" ItemsSource="{Binding objTranPurchaseOrder.ListTranPurchaseOrder, Mode=OneWay}" 
+			                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10"
+			                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+			                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
+			                            SelectionMode="Single"  IsSynchronizedWithCurrentItem="True"
+			                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
+			                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="AcountsGridView">
+                    <ListView:SortableListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
+                            <ListView:SortListViewColumn Header="Purchase Order ID" CellTemplate="{StaticResource TranPurchaseOrderIdColumnTemplate}" SortProperty="WeaverCode" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Date" CellTemplate="{StaticResource DateColumnTemplate}" SortProperty="WeaverCode" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Viewer Name" CellTemplate="{StaticResource WeaverNameColumnTemplate}" SortProperty="WeaverCode" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Quality" CellTemplate="{StaticResource QualityNnameColumnTemplate}" SortProperty="AccountType" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Broker" CellTemplate="{StaticResource BrokerNameColumnTemplate}" SortProperty="Place" Width="100" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+
+                            <ListView:SortListViewColumn Header="Than" CellTemplate="{StaticResource ThanColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Rate" CellTemplate="{StaticResource RateColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Side" CellTemplate="{StaticResource SideColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Packing" CellTemplate="{StaticResource PackingColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Pending Than" CellTemplate="{StaticResource PendingThanColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            
+                            <ListView:SortListViewColumn Header="[C/D]" CellTemplate="{StaticResource CDColumnTemplate}" SortProperty="Place" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                        </GridView>
+                    </ListView:SortableListView.View>
+                </ListView:SortableListView>
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>

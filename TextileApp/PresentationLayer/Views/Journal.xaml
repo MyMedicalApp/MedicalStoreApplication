@@ -1,0 +1,260 @@
+﻿<Window x:Class="TextileApp.Views.Journal"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Accounting="clr-namespace:TextileApp.ViewModels"
+    xmlns:ListView="clr-namespace:TextileApp"        
+    xmlns:UC="clr-namespace:TextileApp.UserControls"
+    Title="Journal"
+	Width="1000" Height="650"
+    Style="{DynamicResource ModalWindowStyle}"
+    FontFamily="Arial" FontSize="11" Foreground="White"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" Background="{x:Null}"
+    WindowStartupLocation="CenterScreen" ShowInTaskbar="False" RenderTransformOrigin="0.5,0.5">
+    <Window.Resources>
+        <!--Strat of my defined codes -->
+
+        <Storyboard x:Key="StoryboardEnterance">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="510" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-30" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.8000000" Value="0" KeySpline="0,0,0,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardUnitFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardGroupFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardProductFadeIn">
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ProductPane" Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.3000000" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="SallerPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="PurchaserPane" Storyboard.TargetProperty="(UIElement.Visibility)">
+                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Collapsed}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="StoryboardEntrance">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="230" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-30" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0" KeySpline="0,0,0,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <DataTemplate x:Key="ReferenceNoColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=RefNo}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="JournalNoColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=JournalNo}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="VoucherDateColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=VoucherDate}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="DebitPartyColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=DebitAccountName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="CreditPartyColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=CreditAccountName}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="DebitNarrationColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=DebitNarration}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="CreditNarrationColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=CreditNarration}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="AmountColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Amount}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+
+    </Window.Resources>
+    <Window.RenderTransform>
+        <TransformGroup>
+            <ScaleTransform ScaleX="1" ScaleY="1"/>
+            <SkewTransform AngleX="0" AngleY="0"/>
+            <RotateTransform Angle="0"/>
+            <TranslateTransform X="0" Y="0"/>
+        </TransformGroup>
+    </Window.RenderTransform>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource StoryboardEntrance}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Window.CommandBindings>
+        <CommandBinding Command="Close"
+        Executed="CloseCommand_Executed"/>
+    </Window.CommandBindings>
+    <Window.DataContext>
+        <Accounting:TranJournalViewModels/>
+    </Window.DataContext>
+    <Grid Width="1000" Height="650">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Width="960" FontWeight="Bold" Grid.Row="1" Grid.Column="1" >
+            <GroupBox.Header>
+                <TextBlock FontWeight="Bold" Foreground="Orange" FontSize="16">Journal Entry</TextBlock>
+            </GroupBox.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock  Grid.Row="1" Grid.Column="1" Text="Journal No. : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranJournal.JournalNo, Mode=TwoWay}" Grid.Row="1" Grid.Column="2" Width="150" x:Name="txtCashInHand" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="Reference No. : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranJournal.RefNo}" Grid.Row="2" Grid.Column="2" Width="150" x:Name="txtRefNo" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="Debit Party : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <UC:AutoCompleteTextBox Grid.Row="3" Grid.Column="2" Width="150" x:Name="cmbAccountName" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                </UC:AutoCompleteTextBox>
+                <TextBlock Grid.Row="4" Grid.Column="1" Text="Debit Narration : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranJournal.DebitNarration}" Grid.Row="4" Grid.Column="2" Width="150" x:Name="txtDebitNaration" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+                <TextBlock Grid.Row="5" Grid.Column="1" Text="Amount : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranJournal.Amount}" Grid.Row="5" Grid.Column="2" Width="150" x:Name="txtAmount" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                <TextBlock Grid.Row="1" Grid.Column="4" Text="Voucher Date : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <DatePicker Grid.Row="1" Grid.Column="5" Height="25" Width="150" x:Name="txtVoucherDate" />
+
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="Credit Party : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <UC:AutoCompleteTextBox Grid.Row="3" Grid.Column="5" Width="150" x:Name="cmbAccountNameCr" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                </UC:AutoCompleteTextBox>
+
+                <TextBlock Grid.Row="4" Grid.Column="4" Text="Credit Narration : " HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Center"/>
+                <TextBox Text="{Binding Path=objTranJournal.CreditNarration}" Grid.Row="4" Grid.Column="5" Width="150" x:Name="txtDescription" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+
+            </Grid>
+        </GroupBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="10" Name="LeftLine1" Background="White" Height="2" VerticalAlignment="Top" ></TextBlock>
+        <Canvas Grid.Row="5" Grid.Column="1" Height="25" Width="360" HorizontalAlignment="Left" Margin="0,5,0,5" VerticalAlignment="Top" >
+            <TextBlock Text="Enter Voucher No. : " FontWeight="Bold" FontSize="12" HorizontalAlignment="Right" Margin="0,6,0,0" VerticalAlignment="Center" />
+
+            <TextBox Canvas.Left="124" Width="150" Text="{Binding Path=objTranJournal.SearchTranJournalId}" x:Name="txtSeartchAccountCode" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding SearchMstAccountMasterCmd}" CommandParameter="{Binding Text, ElementName=txtSeartchAccountCode}" Key="Enter" />
+                </TextBox.InputBindings>
+            </TextBox>
+
+            <Button Canvas.Left="280" Name="btnSearch" Command="{Binding SearchTranJournalCmd}" CommandParameter="{Binding Text, ElementName=txtSeartchAccountCode}" Style="{DynamicResource BlueButtonStyle}" Content="Search" Foreground="#FFFFFFFF" FontSize="12"
+                     FontWeight="Bold" IsDefault="False"  Width="72" Height="26" VerticalAlignment="Top"  />
+
+        </Canvas>
+
+        <Canvas Grid.Row="5" Grid.Column="1" Height="25" Width="240" HorizontalAlignment="Right" Margin="65,5,0,5" VerticalAlignment="Top" >
+
+            <Button Name="btnSave" Command="{Binding AddTranJournalCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Save" Foreground="#FFFFFFFF" FontSize="12"
+                     FontWeight="Bold" IsDefault="False"  Width="72" Height="26" VerticalAlignment="Top"  />
+
+            <Button Name="btnReset" Command="{Binding ResetTranJournalCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Reset" FontSize="12" FontWeight="Bold" 
+                    Canvas.Left="84" Foreground="#FFFFFFFF" IsDefault="False" Width="72" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            <Button Name="btnDelete" Command="{Binding DeleteTranJournalCmd}" Style="{DynamicResource BlueButtonStyle}" Content="Delete" FontSize="12" FontWeight="Bold" 
+                    Canvas.Left="168" Foreground="#FFFFFFFF" IsDefault="False" Width="72" Height="26" VerticalAlignment="Top" FontFamily="Arial" />
+
+        </Canvas>
+        <TextBlock Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="10" Name="LeftLine" Background="White" Height="2" VerticalAlignment="Top" ></TextBlock>
+
+        <Canvas Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="10" Width="960" Grid.RowSpan="8" Height="290" HorizontalAlignment="Left">
+            <Border BorderThickness="1" BorderBrush="White" >
+                <ListView:SortableListView Height="290" Width="960" HorizontalAlignment="Left" ItemsSource="{Binding objTranJournal.ListTranJournal, Mode=OneWay}" 
+			                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10"
+			                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+			                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
+			                            SelectionMode="Single"  IsSynchronizedWithCurrentItem="True"
+			                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
+			                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="AcountsGridView">
+                    <ListView:SortableListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
+                            <ListView:SortListViewColumn Header="Journal No." CellTemplate="{StaticResource JournalNoColumnTemplate}" SortProperty="JournalNo" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Reference No." CellTemplate="{StaticResource ReferenceNoColumnTemplate}" SortProperty="ReferenceNo" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Voucher Date" CellTemplate="{StaticResource VoucherDateColumnTemplate}" SortProperty="VoucherDate" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Debit Party" CellTemplate="{StaticResource DebitPartyColumnTemplate}" SortProperty="DebitAccountName" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Credit Party" CellTemplate="{StaticResource CreditPartyColumnTemplate}" SortProperty="CredtAccountName" Width="100" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <ListView:SortListViewColumn Header="Amount" CellTemplate="{StaticResource AmountColumnTemplate}" SortProperty="Amount" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource LastColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
+                        </GridView>
+                    </ListView:SortableListView.View>
+                </ListView:SortableListView>
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>

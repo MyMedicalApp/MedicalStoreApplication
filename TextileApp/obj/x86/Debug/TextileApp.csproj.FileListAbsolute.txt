@@ -1,0 +1,221 @@
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\MainWindow.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\App.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\MainWindow.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\App.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.cache
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\TextileApp.exe
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\TextileApp.pdb
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\BLL.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\Common.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\Model.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\DAL.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\BLL.pdb
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\Common.pdb
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\Model.pdb
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\DAL.pdb
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp.g.resources
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp.Properties.Resources.resources
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp.exe
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp.pdb
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.lref
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp.exe
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\MainWindow.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\App.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\MainWindow.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\App.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.cache
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.lref
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\UserControls\AutoCompleteComboBoxStyle.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\TextileApp.exe
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\TextileApp.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\BLL.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\Common.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\Model.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\DAL.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\BLL.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\Common.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\Model.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\DAL.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp.g.resources
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\TextileApp.Properties.Resources.resources
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp.exe
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\TextileApp.exe
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\TextileApp.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\BLL.dll
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\Common.dll
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\Model.dll
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\DAL.dll
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\BLL.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\Common.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\Model.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\DAL.pdb
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\MainWindow.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\ResourceDic\MainDictionary.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\App.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\MainWindow.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\App.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.cache
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.lref
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\UserControls\AutoCompleteComboBoxStyle.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp.g.resources
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\TextileApp.Properties.Resources.resources
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.read.1.tlog
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.g.cs
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.baml
+F:\Textile Account Software\Mush\TextileApp\TextileApp\bin\Debug\TextileApp.exe.config
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\TextileApp.exe.config
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\UserControls\AutoCompleteComboBoxStyle.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.baml
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.baml
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\UI.Base.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\UI.Resource.dll
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\UI.Base.pdb
+F:\Textile Account Software\TextileApp\TextileApp\bin\Debug\UI.Resource.pdb
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.g.cs
+F:\Textile Account Software\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\TextileApp.exe.config
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\UI.Base.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\UI.Resource.dll
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\UI.Base.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\bin\Debug\UI.Resource.pdb
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.g.cs
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.baml
+E:\WPF Project\AccountingDB\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\TextileApp.exe.config
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.exe
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\TextileApp.exe
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\TextileApp.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\BLL.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\Common.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\Model.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\UI.Base.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\UI.Resource.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\DAL.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\BLL.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\Common.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\Model.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\UI.Base.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\UI.Resource.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\DAL.pdb
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.csprojResolveAssemblyReference.cache
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\MainWindow.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\App.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\MainWindow.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\App.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.cache
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp_MarkupCompile.lref
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\LoginWindow.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\UserControls\AutoCompleteComboBoxStyle.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\AccountWindow.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\BrokerDetail.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Cash.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\Journal.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstChecker.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstCompany.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstQuality.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstTransport.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\MstWeaver.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\PurchaseOrder.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesOrder.baml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.g.resources
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.Properties.Resources.resources
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\obj\x86\Debug\TextileApp.csproj.GenerateResource.Cache
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\System.Windows.Interactivity.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\System.Windows.Interactivity.xml
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\de\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\en\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\es\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\fr\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\it\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\ja\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\ko\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
+D:\WPF_Project\New folder\TextileApp_6June\TextileApp\TextileApp\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
