@@ -34,3 +34,12 @@ D:\WPF_Project\New folder\TextileApp_6June\TextileApp\DAL\bin\Debug\Model.pdb
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\DAL\obj\Debug\DAL.dll
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\DAL\obj\Debug\DAL.pdb
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\DAL.dll
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\DAL.pdb
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\Common.dll
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\Model.dll
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\Common.pdb
+D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\Model.pdb
+D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.dll
+D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.pdb

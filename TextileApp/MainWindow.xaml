@@ -33,11 +33,11 @@
         </Storyboard>
         <DataTemplate x:Key="ProductColumnTemplate">
             <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=ProductName}" HorizontalAlignment="Stretch"  />-->
-            <UC:AutoCompleteTextBox TabIndex="0" Height="30" Width="200" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>
+            <UC:AutoCompleteTextBox Height="20" Width="100" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left"></UC:AutoCompleteTextBox>
         </DataTemplate>
         <DataTemplate x:Key="ExpiryDateColumnTemplate">
             <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=ExpiryDate}" HorizontalAlignment="Stretch"  />-->
-            <TextBox Height="23" HorizontalAlignment="Left" Name="textBox3" VerticalAlignment="Top" Width="120" >
+            <TextBox Height="23" HorizontalAlignment="Left" Name="textBox3" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxInputMaskBehavior_PreviewKeyDown" >
                 <i:Interaction.Behaviors>
                     <Behaviors:TextBoxInputMaskBehavior InputMask="00/00" />
                 </i:Interaction.Behaviors>
@@ -47,7 +47,7 @@
         <DataTemplate x:Key="QtyColumnTemplate">
             <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Qty}" HorizontalAlignment="Stretch"  />-->
             
-            <TextBox TabIndex="1" x:Name="txtQty" Style="{DynamicResource TextBoxStyle}" PreviewKeyDown="txtQty_PreviewKeyDown"  />
+            <TextBox x:Name="txtQty" Style="{DynamicResource TextBoxStyle}" PreviewKeyDown="txtQty_PreviewKeyDown"  />
         </DataTemplate>
     </Window.Resources>
     <DockPanel> 
@@ -102,6 +102,7 @@
                         <DropShadowBitmapEffect Color="Black" Direction="0" ShadowDepth="0" Opacity="1" Softness="2" />
                     </Border.BitmapEffect>
                     <Canvas Name="MainArea" Height="600" Width="1000" VerticalAlignment="Top">
+                       
                         <ListView:SortableListView Width="450" HorizontalAlignment="Left" 
 			                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10"
 			                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -119,7 +120,34 @@
                                 </GridView>
                             </ListView:SortableListView.View>
                         </ListView:SortableListView>
+                        <DataGrid Name="SampleGrid" AutoGenerateColumns="False" SelectionMode="Single" PreviewKeyDown="maindg_PreviewKeyDown" SelectionUnit="Cell" RowHeaderWidth="20" ColumnHeaderHeight="35" RowHeight="25" Background="LightCyan" RowBackground="White" AlternatingRowBackground="Aquamarine" 
+                                  FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Header="Product" Width="150"  SortMemberPath="Moons">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>                                            
+                                            <UC:AutoCompleteTextBox Height="30" Width="150" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                    <DataGridTemplateColumn.CellEditingTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <UC:AutoCompleteTextBox Height="30" Width="200" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellEditingTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Binding="{Binding ProductName}" Header="ProductName" Width="80" Foreground="Blue" FontWeight="Bold" CanUserReorder="False" />
+                                <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="ExpiryDate" Width="50" CanUserResize="False" />
+                                <DataGridTextColumn Binding="{Binding Qty}" Width="140" Header="Qty" />                                
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </Canvas>
+                    
                 </Border>
             </Grid>
             

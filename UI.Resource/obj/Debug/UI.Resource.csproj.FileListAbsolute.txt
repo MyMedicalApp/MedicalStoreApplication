@@ -172,3 +172,46 @@ D:\WPF_Project\New folder\TextileApp_6June\TextileApp\UI.Resource\obj\Debug\UI.R
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\UI.Resource\obj\Debug\UI.Resource.csproj.GenerateResource.Cache
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\UI.Resource\obj\Debug\UI.Resource.dll
 D:\WPF_Project\New folder\TextileApp_6June\TextileApp\UI.Resource\obj\Debug\UI.Resource.pdb
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.dll
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.pdb
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.dll
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.pdb
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.csprojResolveAssemblyReference.cache
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Button.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Calendar.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\CheckBox.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ComboBox.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\DataGrid.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\DatePicker.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\DocumentViewer.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Expander.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Frame.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\GroupBox.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Label.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ListBox.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ListView.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Menu.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\NavigationWindow.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ProgressBar.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\RadioButton.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ResizeGrip.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ScrollBar.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ScrollViewer.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Separator.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Shared.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Slider.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\StatusBar.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\TabControl.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\TextBox.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ToolBar.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\ToolTip.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\TreeView.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Window.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource_MarkupCompile.cache
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource_MarkupCompile.lref
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\Themes\Generic.baml
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.g.resources
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.Properties.Resources.resources
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.csproj.GenerateResource.Cache
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.dll
+D:\MedicalProjects\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.pdb
