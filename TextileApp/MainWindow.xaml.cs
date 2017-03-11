@@ -41,18 +41,22 @@ namespace TextileApp
             td.ExpiryDate = "12/15";
             td.Qty = 0;
             items.Add(td);
-
+           
             TestData tdata = new TestData();
             tdata.ProductName = "Cipla";
             tdata.ExpiryDate = "12/21";
             tdata.Qty = 2;
-            items.Add(td);
+            items.Add(tdata);
             SampleGrid.ItemsSource = items;
-            SampleGrid.Focus();
+            
+            SampleGrid.BeginEdit();
         }
-        public class SampleData
-        {
-
+        private void SampleGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {   
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                SampleGrid.BeginEdit();
+            }
         }
         private void AccountMasterMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -268,6 +272,7 @@ namespace TextileApp
             }
             //handl the default action of keydown
             e.Handled = true;
-        }  
+        }
+
     }
 }

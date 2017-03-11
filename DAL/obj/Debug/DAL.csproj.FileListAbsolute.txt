@@ -43,3 +43,12 @@ D:\MedicalProjects\MedicalStoreApplication\DAL\bin\Debug\Model.pdb
 D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.dll
 D:\MedicalProjects\MedicalStoreApplication\DAL\obj\Debug\DAL.pdb
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\DAL.dll
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\DAL.pdb
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\Common.dll
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\Model.dll
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\Common.pdb
+D:\Mohsin\MedicalStoreApplication\DAL\bin\Debug\Model.pdb
+D:\Mohsin\MedicalStoreApplication\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\Mohsin\MedicalStoreApplication\DAL\obj\Debug\DAL.dll
+D:\Mohsin\MedicalStoreApplication\DAL\obj\Debug\DAL.pdb

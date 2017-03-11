@@ -121,7 +121,7 @@
                             </ListView:SortableListView.View>
                         </ListView:SortableListView>
                         <DataGrid Name="SampleGrid" AutoGenerateColumns="False" SelectionMode="Single" PreviewKeyDown="maindg_PreviewKeyDown" SelectionUnit="Cell" RowHeaderWidth="20" ColumnHeaderHeight="35" RowHeight="25" Background="LightCyan" RowBackground="White" AlternatingRowBackground="Aquamarine" 
-                                  FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
+                                  RowEditEnding="SampleGrid_RowEditEnding" FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Product" Width="150"  SortMemberPath="Moons">
                                     <DataGridTemplateColumn.CellTemplate>
