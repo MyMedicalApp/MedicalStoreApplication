@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Common;
-using TextileAppModel;
+using MedicalApp.Model;
 
-namespace TextileApp
+namespace MedicalApp
 {
     public class CommonModel
     {
@@ -40,13 +40,13 @@ namespace TextileApp
         public static long GetPrimkeyValue(PrimKeyTables PrimKey)
         {
             long nPrimKeyValue = 0;
-            List<T_PrimKeyValues> ListPrimKey = BLL.BllClient.objBllClient.GetList<T_PrimKeyValues>(Common.DataSourceTypes.T_PrimKeyValuesList, new T_PrimKeyValues() { PrimKeyTable = (short)PrimKey });
-            if (ListPrimKey.Count > 0){
-                nPrimKeyValue = ListPrimKey[0].PrimKeyValue;
-            }
+            //List<T_PrimKeyValues> ListPrimKey = BLL.BllClient.objBllClient.GetList<T_PrimKeyValues>(Common.DataSourceTypes.T_PrimKeyValuesList, new T_PrimKeyValues() { PrimKeyTable = (short)PrimKey });
+            //if (ListPrimKey.Count > 0){
+            //    nPrimKeyValue = ListPrimKey[0].PrimKeyValue;
+            //}
             return nPrimKeyValue;
         }
 
-        public static T_MstAccount CurrentUser { get; set; }
+        //public static T_MstAccount CurrentUser { get; set; }
     }
 }

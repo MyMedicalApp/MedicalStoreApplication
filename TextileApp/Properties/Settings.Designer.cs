@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TextileApp.Properties
+namespace MedicalApp.Properties
 {
 
 

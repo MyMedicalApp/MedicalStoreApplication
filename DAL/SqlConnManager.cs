@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Data;
 using System.Data.SqlClient;
 
-using TextileAppModel;
+using MedicalApp.Model;
 namespace DAL
 {
     public delegate void TGenerateListFormReader<T>(DbDataReader objReader,ref List<T> listdata);

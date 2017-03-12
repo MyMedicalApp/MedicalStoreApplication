@@ -5,7 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace TextileApp.UserControls
+namespace MedicalApp.UserControls
 {
     /// <summary>
     /// Achieve AutoComplete TextBox or ComboBox

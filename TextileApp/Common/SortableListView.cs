@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace TextileApp
+namespace MedicalApp
 {
     // if the GridView exposed any methods at all that allowed for overriding at a control level, I would be
     // able to do all of this work inside it rather than the ListView. However, b/c it doesn't, I have to do the 

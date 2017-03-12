@@ -4,8 +4,8 @@
  using System.Text;
  using Common;
  using System.Data;
-    
-namespace TextileAppModel
+
+namespace MedicalApp.Model
 {
     public class T_ErrorDesc : IModel
     {

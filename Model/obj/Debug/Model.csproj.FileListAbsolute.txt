@@ -33,3 +33,10 @@ D:\MedicalProjects\MedicalStoreApplication\Model\bin\Debug\Common.pdb
 D:\MedicalProjects\MedicalStoreApplication\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 D:\MedicalProjects\MedicalStoreApplication\Model\obj\Debug\Model.dll
 D:\MedicalProjects\MedicalStoreApplication\Model\obj\Debug\Model.pdb
+E:\a\MedicalStoreApplication\Model\bin\Debug\Model.dll
+E:\a\MedicalStoreApplication\Model\bin\Debug\Model.pdb
+E:\a\MedicalStoreApplication\Model\bin\Debug\Common.dll
+E:\a\MedicalStoreApplication\Model\bin\Debug\Common.pdb
+E:\a\MedicalStoreApplication\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\a\MedicalStoreApplication\Model\obj\Debug\Model.dll
+E:\a\MedicalStoreApplication\Model\obj\Debug\Model.pdb

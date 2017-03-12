@@ -5,8 +5,8 @@
  using Common;
  using System.Data;
  using System.Runtime.Serialization;
-    
-namespace TextileAppModel
+
+namespace MedicalApp.Model
 {        
     public class DataBaseResultSet
     {        

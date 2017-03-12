@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace TextileApp
+namespace MedicalApp
 {
     /// <summary>
     /// A command whose sole purpose is to 

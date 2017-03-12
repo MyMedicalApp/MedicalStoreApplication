@@ -86,118 +86,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PresentationLayer\Views\AccountWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\BrokerDetail.xaml">
+    <Page Include="PresentationLayer\Views\DoctorMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PresentationLayer\Views\Cash.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PresentationLayer\Views\Journal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PresentationLayer\Views\MstChecker.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\MstCompany.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\MstQuality.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\MstTransport.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\MstWeaver.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PresentationLayer\Views\PurchaseOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PresentationLayer\Views\SalesOrder.xaml">
+    <Page Include="PresentationLayer\Views\GenericMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PresentationLayer\Models\MstAccount.cs" />
-    <Compile Include="PresentationLayer\Models\MstAccountMaster.cs" />
-    <Compile Include="PresentationLayer\Models\MstBroker.cs" />
-    <Compile Include="PresentationLayer\Models\MstChecker.cs" />
-    <Compile Include="PresentationLayer\Models\MstCompany.cs" />
-    <Compile Include="PresentationLayer\Models\MstFinancialYear.cs" />
-    <Compile Include="PresentationLayer\Models\MstGroup.cs" />
-    <Compile Include="PresentationLayer\Models\MstQuality.cs" />
-    <Compile Include="PresentationLayer\Models\MstRole.cs" />
-    <Compile Include="PresentationLayer\Models\MstTransport.cs" />
-    <Compile Include="PresentationLayer\Models\MstWeaver.cs" />
-    <Compile Include="PresentationLayer\Models\TranCash.cs" />
-    <Compile Include="PresentationLayer\Models\TranJournal.cs" />
-    <Compile Include="PresentationLayer\Models\TranPurchaseOrder.cs" />
-    <Compile Include="PresentationLayer\Models\TranSalesBill.cs" />
-    <Compile Include="PresentationLayer\Models\TranSalesOrder.cs" />
+    <Compile Include="PresentationLayer\Models\DoctorMaster.cs" />
+    <Compile Include="PresentationLayer\Models\GenericMaster.cs" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBox.CS" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBoxData.CS" />
-    <Compile Include="PresentationLayer\ViewModels\MstAccountMasterViewModels.cs" />
+    <Compile Include="PresentationLayer\ViewModels\DoctorMasterViewModels.cs" />
+    <Compile Include="PresentationLayer\ViewModels\GenericMasterViewModels.cs" />
     <Compile Include="PresentationLayer\ViewModels\MstAccountViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstBrokerViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstCheckerViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstCompanyViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstFinancialYearViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstGroupViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstQualityViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstRoleViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstTransportViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\MstWeaverViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\TranCashViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\TranJournalViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\TranPurchaseOrderViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\TranSalesBillViewModels.cs" />
-    <Compile Include="PresentationLayer\ViewModels\TranSalesOrderViewModels.cs" />
-    <Compile Include="PresentationLayer\Views\AccountWindow.xaml.cs">
-      <DependentUpon>AccountWindow.xaml</DependentUpon>
+    <Compile Include="PresentationLayer\Views\DoctorMaster.xaml.cs">
+      <DependentUpon>DoctorMaster.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PresentationLayer\Views\BrokerDetail.xaml.cs">
-      <DependentUpon>BrokerDetail.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\Cash.xaml.cs">
-      <DependentUpon>Cash.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\Journal.xaml.cs">
-      <DependentUpon>Journal.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\MstChecker.xaml.cs">
-      <DependentUpon>MstChecker.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\MstCompany.xaml.cs">
-      <DependentUpon>MstCompany.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\MstQuality.xaml.cs">
-      <DependentUpon>MstQuality.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\MstTransport.xaml.cs">
-      <DependentUpon>MstTransport.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\MstWeaver.xaml.cs">
-      <DependentUpon>MstWeaver.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\PurchaseOrder.xaml.cs">
-      <DependentUpon>PurchaseOrder.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PresentationLayer\Views\SalesOrder.xaml.cs">
-      <DependentUpon>SalesOrder.xaml</DependentUpon>
+    <Compile Include="PresentationLayer\Views\GenericMaster.xaml.cs">
+      <DependentUpon>GenericMaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

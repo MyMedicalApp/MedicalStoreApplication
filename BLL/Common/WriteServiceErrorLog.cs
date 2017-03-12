@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using TextileAppModel;
+using MedicalApp.Model;
 using Common;
 namespace BLL
 {

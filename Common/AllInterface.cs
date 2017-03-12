@@ -71,7 +71,12 @@ namespace Common
         T_TranSalesBillSave,
         T_TranSalesOrderList,
         T_TranSalesOrderSave,
-        T_PrimKeyValuesList        
+        T_PrimKeyValuesList ,
+        GenericMasterSave,
+        GenericMasterList,
+        DoctorMasterSave,
+        DoctorMasterList
+
     }
 
     public enum DateTimeFormat : short

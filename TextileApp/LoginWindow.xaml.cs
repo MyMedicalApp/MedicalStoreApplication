@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Configuration;
 
-namespace TextileApp
+namespace MedicalApp
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
@@ -25,7 +25,8 @@ namespace TextileApp
             //System.IO.StreamReader myFile = new System.IO.StreamReader("c:\\Textile.txt");
             //string myString = myFile.ReadToEnd();
             //myFile.Close();
-            //Common.ConnctionSetting.ConStr = myString;      
+            //Common.ConnctionSetting.ConStr = myString;    
+            Common.ConnctionSetting.ConStr = "Data Source=MAHEN\\SQLEXPRESS;Initial Catalog=2016;User ID=sa;Password=123456";   //;myString;     
 
             InitializeComponent();
         }

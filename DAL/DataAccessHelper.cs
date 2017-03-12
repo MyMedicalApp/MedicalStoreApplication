@@ -4,7 +4,7 @@
  using System.Text;                 
  using Common;                      
  using System.Data.Common;          
- using TextileAppModel;                    
+ using MedicalApp.Model;                    
     
 namespace DAL
 {    

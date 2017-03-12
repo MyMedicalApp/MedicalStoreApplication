@@ -64,3 +64,14 @@ D:\Mohsin\MedicalStoreApplication\BLL\bin\Debug\Model.pdb
 D:\Mohsin\MedicalStoreApplication\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 D:\Mohsin\MedicalStoreApplication\BLL\obj\Debug\BLL.dll
 D:\Mohsin\MedicalStoreApplication\BLL\obj\Debug\BLL.pdb
+E:\a\MedicalStoreApplication\BLL\bin\Debug\BLL.dll
+E:\a\MedicalStoreApplication\BLL\bin\Debug\BLL.pdb
+E:\a\MedicalStoreApplication\BLL\bin\Debug\Common.dll
+E:\a\MedicalStoreApplication\BLL\bin\Debug\DAL.dll
+E:\a\MedicalStoreApplication\BLL\bin\Debug\Model.dll
+E:\a\MedicalStoreApplication\BLL\bin\Debug\Common.pdb
+E:\a\MedicalStoreApplication\BLL\bin\Debug\DAL.pdb
+E:\a\MedicalStoreApplication\BLL\bin\Debug\Model.pdb
+E:\a\MedicalStoreApplication\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\a\MedicalStoreApplication\BLL\obj\Debug\BLL.dll
+E:\a\MedicalStoreApplication\BLL\obj\Debug\BLL.pdb

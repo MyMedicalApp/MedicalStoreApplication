@@ -10,13 +10,13 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TextileApp.ViewModels;
-using TextileApp.Views;
+using MedicalApp.ViewModels;
+using MedicalApp.Views;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Controls.Primitives;
 
-namespace TextileApp
+namespace MedicalApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -60,9 +60,9 @@ namespace TextileApp
         }
         private void AccountMasterMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            AccountWindow accountWindow = new AccountWindow();
-            accountWindow.ShowDialog();
-            accountWindow.txtAccountCode.Focus();
+            //AccountWindow accountWindow = new AccountWindow();
+            //accountWindow.ShowDialog();
+            //accountWindow.txtAccountCode.Focus();
         }
 
         public class TestData : INotifyPropertyChanged
@@ -120,67 +120,43 @@ namespace TextileApp
         }
 
         #region "Masters"
-        private void BrokerMenuItem_Click(object sender, RoutedEventArgs e)
+        private void DoctorMasterMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            BrokerDetail brokerDetail = new BrokerDetail();
-            brokerDetail.ShowDialog();
+            DoctorMaster MstCompanyDetail = new DoctorMaster();
+            MstCompanyDetail.ShowDialog();
         }
 
-        private void TransportMenuItem_Click(object sender, RoutedEventArgs e)
+        private void GenericMasterMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MstTransport objMstTransport = new MstTransport();
-            objMstTransport.ShowDialog();
-        }
-
-        private void QuantityMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MstQuality objMstQuality = new MstQuality();
-            objMstQuality.ShowDialog();
-        }
-
-        private void ViewerMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MstWeaver objMstWeaver = new MstWeaver();
-            objMstWeaver.ShowDialog();
-        }
-
-        private void CheckerMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MstChecker objMstChecker = new MstChecker();
-            objMstChecker.ShowDialog();
-        }
-
-        private void CompanyMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MstCompany MstCompanyDetail = new MstCompany();
+            GenericMaster MstCompanyDetail = new GenericMaster();
             MstCompanyDetail.ShowDialog();
         }
         #endregion "Masters"
 
         #region "Transaction"
-        private void SalesOrderMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            SalesOrder salesOrder = new SalesOrder();
-            salesOrder.ShowDialog();
-        }
+        //private void SalesOrderMenuItem_Click(object sender, RoutedEventArgs e)
+        //{
+        //    SalesOrder salesOrder = new SalesOrder();
+        //    salesOrder.ShowDialog();
+        //}
 
-        private void PurchaseOrderMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            PurchaseOrder purchaseOrder = new PurchaseOrder();
-            purchaseOrder.ShowDialog();
-        }
+        //private void PurchaseOrderMenuItem_Click(object sender, RoutedEventArgs e)
+        //{
+        //    PurchaseOrder purchaseOrder = new PurchaseOrder();
+        //    purchaseOrder.ShowDialog();
+        //}
 
-        private void CashMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Cash cash = new Cash();
-            cash.ShowDialog();
-        }
+        //private void CashMenuItem_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Cash cash = new Cash();
+        //    cash.ShowDialog();
+        //}
 
-        private void JournalMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Journal journal = new Journal();
-            journal.ShowDialog();
-        }
+        //private void JournalMenuItem_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Journal journal = new Journal();
+        //    journal.ShowDialog();
+        //}
         #endregion "Transaction"
 
         private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
