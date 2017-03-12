@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\
+E:\a\MedicalStoreApplication\TextileApp\obj\x86\Debug\
 TextileApp
 none
 false
 DEBUG;TRACE
-D:\Mohsin\MedicalStoreApplication\TextileApp\App.xaml
+E:\a\MedicalStoreApplication\TextileApp\App.xaml
 142025853994
 
 57237149124
-201896847344
+201554759278
 LoginWindow.xaml;MainWindow.xaml;PresentationLayer\UserControls\AutoCompleteComboBoxStyle.xaml;PresentationLayer\Views\AccountWindow.xaml;PresentationLayer\Views\BrokerDetail.xaml;PresentationLayer\Views\Cash.xaml;PresentationLayer\Views\Journal.xaml;PresentationLayer\Views\MstChecker.xaml;PresentationLayer\Views\MstCompany.xaml;PresentationLayer\Views\MstQuality.xaml;PresentationLayer\Views\MstTransport.xaml;PresentationLayer\Views\MstWeaver.xaml;PresentationLayer\Views\PurchaseOrder.xaml;PresentationLayer\Views\SalesOrder.xaml;
 
-False
+True
 

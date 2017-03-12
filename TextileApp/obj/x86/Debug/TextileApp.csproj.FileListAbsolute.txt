@@ -347,3 +347,6 @@ D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Vie
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\TextileApp.g.resources
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\TextileApp.Properties.Resources.resources
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\TextileApp.csproj.GenerateResource.Cache
+E:\a\MedicalStoreApplication\TextileApp\bin\Debug\TextileApp.exe.config
+E:\a\MedicalStoreApplication\TextileApp\obj\x86\Debug\TextileApp.exe
+E:\a\MedicalStoreApplication\TextileApp\obj\x86\Debug\TextileApp.pdb
