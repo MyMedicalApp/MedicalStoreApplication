@@ -8,6 +8,9 @@
     
 namespace BLL
 {    
+    /// <summary>
+    /// BllClient File
+    /// </summary>
     public class BllClient
     {
         private DataAccessHelper objDAL = new DataAccessHelper();
