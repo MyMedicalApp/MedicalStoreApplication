@@ -25,8 +25,44 @@ namespace MedicalApp.UserControls
             this.Resources = rd;
             //disable default Text Search Function
             this.IsTextSearchEnabled = false;
-        }
 
+            AutoCompleteTextBoxData atd = new AutoCompleteTextBoxData();
+            atd.Text = "Product1";
+            atd.Value = "1";
+            autoSuggestionList.Add(atd);
+
+            AutoCompleteTextBoxData atd2 = new AutoCompleteTextBoxData();
+            atd2.Text = "Product2";
+            atd2.Value = "2";
+            autoSuggestionList.Add(atd2);
+
+            AutoCompleteTextBoxData atd3 = new AutoCompleteTextBoxData();
+            atd3.Text = "Product3";
+            atd3.Value = "3";
+            autoSuggestionList.Add(atd3);
+
+            AutoCompleteTextBoxData atd4 = new AutoCompleteTextBoxData();
+            atd4.Text = "Product4";
+            atd4.Value = "4";
+            autoSuggestionList.Add(atd4);
+
+            AutoCompleteTextBoxData atd5 = new AutoCompleteTextBoxData();
+            atd5.Text = "Product5";
+            atd5.Value = "5";
+            autoSuggestionList.Add(atd5);
+        }
+        public static readonly DependencyProperty ItemsProperty =
+            DependencyProperty.Register(
+                "AutoSuggestionList",
+                typeof(ItemCollection),
+                typeof(AutoCompleteTextBox),
+                new PropertyMetadata(default(ItemCollection), OnItemsPropertyChanged));
+
+        private static void OnItemsPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            // AutocompleteTextBox source = d as AutocompleteTextBox;
+            // Do something...
+        }
         /// <summary>
         /// Override OnApplyTemplate method 
         /// Get TextBox control out of Combobox control, and hook up TextChanged event.

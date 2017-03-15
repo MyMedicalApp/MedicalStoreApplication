@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\a\MedicalStoreApplication\TextileApp\obj\x86\Debug\
+D:\MedicalProjects\MedicalStoreApplication\TextileApp\obj\x86\Debug\
 TextileApp
 none
 false
 DEBUG;TRACE
-E:\a\MedicalStoreApplication\TextileApp\App.xaml
-51320254662
+D:\MedicalProjects\MedicalStoreApplication\TextileApp\App.xaml
+6-1542662128
 
-211910352736
-201554759278
-LoginWindow.xaml;MainWindow.xaml;PresentationLayer\UserControls\AutoCompleteComboBoxStyle.xaml;PresentationLayer\Views\DoctorMaster.xaml;PresentationLayer\Views\GenericMaster.xaml;
+22-1891555548
+29-752758570
+LoginWindow.xaml;MainWindow.xaml;PresentationLayer\UserControls\AutoCompleteComboBoxStyle.xaml;PresentationLayer\Views\DoctorMaster.xaml;PresentationLayer\Views\GenericMaster.xaml;PresentationLayer\Views\SalesBill.xaml;
 
 True
 

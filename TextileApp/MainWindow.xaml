@@ -9,8 +9,10 @@
     Title="Accounting Application" WindowStartupLocation="CenterScreen" WindowState="Maximized" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit"
-        mc:Ignorable="d" Foreground="White" FontWeight="Bold">
+        xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" 
+        xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+        Height="{Binding SystemParameters.PrimaryScreenHeight}" 
+    Width="{Binding SystemParameters.PrimaryScreenWidth}" Foreground="White" FontWeight="Bold">
     <Window.Resources>
         <Storyboard x:Key="Storyboard1">
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" RepeatBehavior="Forever">
@@ -31,26 +33,8 @@
                 <SplineDoubleKeyFrame KeyTime="00:00:00.1500000" Value="1"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        <DataTemplate x:Key="ProductColumnTemplate">
-            <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=ProductName}" HorizontalAlignment="Stretch"  />-->
-            <UC:AutoCompleteTextBox Height="20" Width="100" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left"></UC:AutoCompleteTextBox>
-        </DataTemplate>
-        <DataTemplate x:Key="ExpiryDateColumnTemplate">
-            <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=ExpiryDate}" HorizontalAlignment="Stretch"  />-->
-            <TextBox Height="23" HorizontalAlignment="Left" Name="textBox3" VerticalAlignment="Top" Width="120" PreviewKeyDown="TextBoxInputMaskBehavior_PreviewKeyDown" >
-                <i:Interaction.Behaviors>
-                    <Behaviors:TextBoxInputMaskBehavior InputMask="00/00" />
-                </i:Interaction.Behaviors>
-            </TextBox>
-
-        </DataTemplate>
-        <DataTemplate x:Key="QtyColumnTemplate">
-            <!--<TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=Qty}" HorizontalAlignment="Stretch"  />-->
-            
-            <TextBox x:Name="txtQty" Style="{DynamicResource TextBoxStyle}" PreviewKeyDown="txtQty_PreviewKeyDown"  />
-        </DataTemplate>
     </Window.Resources>
-    <DockPanel> 
+    <StackPanel Orientation="Vertical"> 
         <!-- Menu Area -->
         <Border x:Name="MenuBorder" Background="{DynamicResource HeaderBackgroundBrush}" DockPanel.Dock="Top" Margin="0,5,0,5">
             <Menu VerticalAlignment="Bottom" Margin="20,0,0,0" Style="{DynamicResource MenuStyle}">
@@ -60,6 +44,7 @@
                     <MenuItem Header="_Transport" x:Name="TransportMenuItem" Click="TransportMenuItem_Click" />
                     <MenuItem Header="_Quantity" x:Name="QuantityMenuItem" Click="QuantityMenuItem_Click" />
                     <MenuItem Header="_Viewer" x:Name="ViewerMenuItem" Click="ViewerMenuItem_Click" />-->
+                    
                     <MenuItem Header="GenericMaster" x:Name="GenericMasterMenuItem" Click="GenericMasterMenuItem_Click" />
                     <MenuItem Header="_DoctorMaster" x:Name="DoctorMasterMenuItem" Click="DoctorMasterMenuItem_Click" />
                 </MenuItem>
@@ -69,6 +54,7 @@
                     <MenuItem Header="_SalesBill" x:Name="SalesBillMenuItem" />
                     <MenuItem Header="Sales_Order" x:Name="SalesOrderMenuItem" Click="SalesOrderMenuItem_Click" />
                     <MenuItem Header="_PurchaseOrder" x:Name="PurchaseOrderMenuItem" Click="PurchaseOrderMenuItem_Click" />-->
+                    <MenuItem Header="_Sale" x:Name="SaleMenuItem" Click="SaleMenuItem_Click" />
                 </MenuItem>
 
                 <MenuItem Header="_Reports"  Style="{DynamicResource MenuItemStyle}" Foreground="#FFE6E6E6" x:Name="ReportsMenu">
@@ -83,80 +69,19 @@
                 <MenuItem Header="E_xit" Click="ExitMenuItem_Click" Style="{DynamicResource MenuItemStyle}" Foreground="#FFE6E6E6" x:Name="ExitMenu"></MenuItem>
             </Menu>
         </Border>
+        <Canvas Name="MainArea" Height="700" VerticalAlignment="Top">
 
-        <Grid x:Name="MainGrid" DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="30" />
-                <RowDefinition Height="Auto" />                
-            </Grid.RowDefinitions>
+                     <Frame Height="Auto" x:Name="mainFrame"  HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="Auto" NavigationUIVisibility="Hidden" Background="#f2f1e8" />
 
-            <Grid x:Name="LeftPane" Grid.Row="0" Grid.Column="0" Margin="5,0,5,0">
-                <Border x:Name="LeftBorder" Style="{DynamicResource BorderStyle}"  >
-                    <Border.BitmapEffect>
-                        <DropShadowBitmapEffect Color="Black" Direction="0" ShadowDepth="0" Opacity="1" Softness="2" />
-                    </Border.BitmapEffect>
-                    <Canvas Name="MainArea" Height="600" Width="1000" VerticalAlignment="Top">
-                       
-                        <ListView:SortableListView Width="450" HorizontalAlignment="Left" 
-			                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10"
-			                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
-			                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
-			                            SelectionMode="Single"  IsSynchronizedWithCurrentItem="True"
-			                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
-			                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="AcountsGridView">
-                            <ListView:SortableListView.View>
-                                <GridView AllowsColumnReorder="False">
-                                    <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
-                                    <ListView:SortListViewColumn Header="Product Name" CellTemplate="{StaticResource ProductColumnTemplate}" SortProperty="AccountCode" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
-                                    <ListView:SortListViewColumn Header="Expiry Date" CellTemplate="{StaticResource ExpiryDateColumnTemplate}" SortProperty="AccountName" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
-                                    <ListView:SortListViewColumn Header="Qty." CellTemplate="{StaticResource QtyColumnTemplate}" SortProperty="AccountType" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
-                                    <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource LastColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
-                                </GridView>
-                            </ListView:SortableListView.View>
-                        </ListView:SortableListView>
-                        <DataGrid Name="SampleGrid" AutoGenerateColumns="False" SelectionMode="Single" PreviewKeyDown="maindg_PreviewKeyDown" SelectionUnit="Cell" RowHeaderWidth="20" ColumnHeaderHeight="35" RowHeight="25" Background="LightCyan" RowBackground="White" AlternatingRowBackground="Aquamarine" 
-                                  RowEditEnding="SampleGrid_RowEditEnding" FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
-                            <DataGrid.Columns>
-                                <DataGridTemplateColumn Header="Product" Width="150"  SortMemberPath="Moons">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>                                            
-                                            <UC:AutoCompleteTextBox Height="30" Width="150" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                    <DataGridTemplateColumn.CellEditingTemplate>
-                                        <DataTemplate>
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                </Grid.ColumnDefinitions>
-                                                <UC:AutoCompleteTextBox Height="30" Width="200" x:Name="txtGroup" PreviewKeyDown="txtGroup_PreviewKeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>
-                                            </Grid>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellEditingTemplate>
-                                </DataGridTemplateColumn>
-                                <DataGridTextColumn Binding="{Binding ProductName}" Header="ProductName" Width="80" Foreground="Blue" FontWeight="Bold" CanUserReorder="False" />
-                                <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="ExpiryDate" Width="50" CanUserResize="False" />
-                                <DataGridTextColumn Binding="{Binding Qty}" Width="140" Header="Qty" />                                
-                            </DataGrid.Columns>
-                        </DataGrid>
                     </Canvas>
-                    
-                </Border>
-            </Grid>
+                 
             
-            <Border x:Name="BottomStatusBorder" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" DockPanel.Dock="Top" Background="{DynamicResource HeaderBackgroundBrush}" Height="30" Margin="0,5,0,7">
+            <Border x:Name="BottomStatusBorder" Background="{DynamicResource HeaderBackgroundBrush}" Height="30" Margin="0,5,0,7">
                 <Canvas Name="StatusBar" HorizontalAlignment="Left">
                     <TextBlock Name="lblLogInUser" Canvas.Left="290" Text="LoggedIn" Foreground="GreenYellow"/>
                     <TextBlock Name="lblCompayName" Canvas.Left="25" Text="Powered By : UniqueInfotech (Mumbai) |" Foreground="GreenYellow"  />
                 </Canvas>
             </Border>
-        </Grid>
-    </DockPanel>
+
+    </StackPanel>
 </Window>
