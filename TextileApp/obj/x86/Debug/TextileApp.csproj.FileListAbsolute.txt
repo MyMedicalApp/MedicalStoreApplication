@@ -395,3 +395,5 @@ D:\MedicalProjects\MedicalStoreApplication\TextileApp\bin\Debug\WPFToolkit.Desig
 D:\MedicalProjects\MedicalStoreApplication\TextileApp\bin\Debug\WPFToolkit.VisualStudio.Design.pdb
 D:\MedicalProjects\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesBill.baml
 D:\MedicalProjects\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\SalesBill.g.cs
+D:\MedicalProjects\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\SchemeDetails.g.cs
+D:\MedicalProjects\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\SchemeDetails.baml

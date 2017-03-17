@@ -107,6 +107,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PresentationLayer\Views\SchemeDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PresentationLayer\Models\DoctorMaster.cs" />
@@ -124,6 +128,9 @@
     </Compile>
     <Compile Include="PresentationLayer\Views\SalesBill.xaml.cs">
       <DependentUpon>SalesBill.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PresentationLayer\Views\SchemeDetails.xaml.cs">
+      <DependentUpon>SchemeDetails.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

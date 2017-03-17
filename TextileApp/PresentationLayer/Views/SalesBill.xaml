@@ -62,7 +62,7 @@
                                 <DataGridTextColumn Binding="{Binding MRP}" Header="MRP" />
                                 <DataGridTextColumn Binding="{Binding BatchNo}" Header="Batch No." />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="ExpiryDate" />
-                                <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="P Qty" />
+                                <DataGridTextColumn Binding="{Binding Qty}" Header="P Qty" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Loos Qty" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Rate" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Amount" />

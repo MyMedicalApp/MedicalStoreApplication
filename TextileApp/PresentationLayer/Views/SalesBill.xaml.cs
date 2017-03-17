@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Windows.Controls.Primitives;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace MedicalApp.Views
 {
@@ -20,16 +22,85 @@ namespace MedicalApp.Views
     /// </summary>
     public partial class SalesBill : Page
     {
+        public ObservableCollection<TestData> items { get; set; }
+
         public SalesBill()
         {
             InitializeComponent();
+            items = new ObservableCollection<TestData>();
+            TestData td = new TestData();
+            td.ProductName = "Test";
+            td.BatchNo = "02104";
+            td.Qty = 0;
+            items.Add(td);
+             
+            SalesBillGrid.ItemsSource = items;
+            SalesBillGrid.BeginEdit();
+        }
+
+        public class TestData : INotifyPropertyChanged
+        {
+            private string productName;
+            public string ProductName
+            {
+                get { return productName; }
+                set
+                {
+                    productName = value;
+                    OnPropertyChanged("ProductName");
+                }
+            }
+            private string batchNo;
+            public string BatchNo
+            {
+                get { return batchNo; }
+                set
+                {
+                    batchNo = value;
+                    OnPropertyChanged("BatchNo");
+                }
+            }
+            private int qty;
+            public int Qty
+            {
+                get { return qty; }
+                set
+                {
+                    qty = value;
+                    OnPropertyChanged("Qty");
+                }
+            }
+
+            #region INotifyPropertyChanged Members
+            /// <summary>
+            /// Event to which the view's controls will subscribe.
+            /// This will enable them to refresh themselves when the binded property changes provided you fire this event.
+            /// </summary>
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            /// <summary>
+            /// When property is changed call this method to fire the PropertyChanged Event
+            /// </summary>
+            /// <param name="propertyName"></param>
+            public void OnPropertyChanged(string propertyName)
+            {
+                //Fire the PropertyChanged event in case somebody subscribed to it
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+
+            #endregion
         }
 
         private void SalesBillGrid_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             //just accept enter key
             if (e.Key != Key.Enter) return;
-
+            if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "P Qty")
+            {
+                SchemeDetails schemeDetails = new SchemeDetails();
+                schemeDetails.ShowDialog();
+            }
             DependencyObject dep = (DependencyObject)e.OriginalSource;
             //here we just find the cell got focused ...
             //then we can use the cell key down or key up

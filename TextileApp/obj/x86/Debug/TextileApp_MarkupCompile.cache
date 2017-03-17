@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\MedicalProjects\MedicalStoreApplication\TextileApp\App.xaml
-6-1542662128
+71114421359
 
-21-2078363007
+22-165721974
 29-752758570
-LoginWindow.xaml;MainWindow.xaml;PresentationLayer\UserControls\AutoCompleteComboBoxStyle.xaml;PresentationLayer\Views\DoctorMaster.xaml;PresentationLayer\Views\GenericMaster.xaml;PresentationLayer\Views\SalesBill.xaml;
+LoginWindow.xaml;MainWindow.xaml;PresentationLayer\UserControls\AutoCompleteComboBoxStyle.xaml;PresentationLayer\Views\DoctorMaster.xaml;PresentationLayer\Views\GenericMaster.xaml;PresentationLayer\Views\SalesBill.xaml;PresentationLayer\Views\SchemeDetails.xaml;
 
 False
 
