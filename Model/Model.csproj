@@ -40,11 +40,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountMaster.cs" />
+    <Compile Include="AddressBook.cs" />
+    <Compile Include="AdjDetail.cs" />
+    <Compile Include="AreaMaster.cs" />
+    <Compile Include="AutoSetup.cs" />
+    <Compile Include="BatchMaster.cs" />
+    <Compile Include="BillMaster.cs" />
+    <Compile Include="BranchStock.cs" />
+    <Compile Include="CategoryMaster.cs" />
+    <Compile Include="CityMaster.cs" />
+    <Compile Include="CompanyDetail.cs" />
+    <Compile Include="CompanyMaster.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="CrDrDetail.cs" />
+    <Compile Include="CustomerMaster.cs" />
     <Compile Include="DataBaseResultSet.cs" />
+    <Compile Include="DeletedDetail.cs" />
+    <Compile Include="DiseaseDetail.cs" />
+    <Compile Include="DiseaseMaster.cs" />
     <Compile Include="DoctorMaster.cs" />
+    <Compile Include="ErrorDesc.cs" />
     <Compile Include="ErrorDetail.cs" />
+    <Compile Include="FirmMaster.cs" />
     <Compile Include="GenericMaster.cs" />
+    <Compile Include="GroupMaster.cs" />
+    <Compile Include="MapProduct.cs" />
+    <Compile Include="MiscRcptPmt.cs" />
+    <Compile Include="oBatchMaster.cs" />
+    <Compile Include="OBillMaster.cs" />
+    <Compile Include="OldBillMaster.cs" />
+    <Compile Include="OrderDetail.cs" />
+    <Compile Include="OrderMaster.cs" />
+    <Compile Include="OtherAdd.cs" />
+    <Compile Include="oVatDetail.cs" />
+    <Compile Include="PatientMaster.cs" />
+    <Compile Include="PreFormat.cs" />
+    <Compile Include="PrintFormat.cs" />
+    <Compile Include="ProductMaster.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PurDetail.cs" />
+    <Compile Include="ReceivePayment.cs" />
+    <Compile Include="SalesDetail.cs" />
+    <Compile Include="SalesManMaster.cs" />
+    <Compile Include="ShiftMaster.cs" />
+    <Compile Include="TallyMaster.cs" />
+    <Compile Include="UserMaster.cs" />
+    <Compile Include="VatDetail.cs" />
+    <Compile Include="XDetail.cs" />
+    <Compile Include="XMaster.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
