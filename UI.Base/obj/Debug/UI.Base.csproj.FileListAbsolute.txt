@@ -16,8 +16,8 @@ D:\MedicalProjects\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.dll
 D:\MedicalProjects\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.pdb
 D:\MedicalProjects\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.dll
 D:\MedicalProjects\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.pdb
+D:\MedicalProjects\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.csprojResolveAssemblyReference.cache
 E:\a\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.dll
 E:\a\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.pdb
 E:\a\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.dll
 E:\a\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.pdb
-D:\MedicalProjects\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.csprojResolveAssemblyReference.cache
