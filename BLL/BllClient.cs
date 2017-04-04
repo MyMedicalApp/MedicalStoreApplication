@@ -131,6 +131,9 @@ namespace BLL
                 case Common.DataSourceTypes.ProductMasterList:
                     objDAL.GetListProductMaster(objFilter, ref list);
                     break;
+                case Common.DataSourceTypes.GetAllListProduct:
+                    objDAL.GetAllListProduct(objFilter, ref list);
+                    break;
                 case Common.DataSourceTypes.OtherAddList:
                     objDAL.GetListOtherAdd(objFilter, ref list);
                     break;
@@ -139,6 +142,9 @@ namespace BLL
                     break;
                 case Common.DataSourceTypes.BatchMasterList:
                     objDAL.GetListBatchMaster(objFilter, ref list);
+                    break;
+                case Common.DataSourceTypes.BatchMasterListByProductCode:
+                    objDAL.GetListBatchMasterByProductCode(objFilter, ref list);
                     break;
                 case Common.DataSourceTypes.PreFormatList:
                     objDAL.GetListPreFormat(objFilter, ref list);

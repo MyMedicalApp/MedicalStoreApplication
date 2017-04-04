@@ -8,7 +8,7 @@
        xmlns:ViewModels="clr-namespace:MedicalApp.ViewModels" 
        xmlns:UC="clr-namespace:MedicalApp.UserControls"
        xmlns:Sorting="clr-namespace:MedicalApp"          
-       Width="400" Height="250" Title="Half Scheme Details"
+       Width="300" Height="250" Title="Half Scheme Details"
        Style="{DynamicResource ModalWindowStyle}"       
        FontFamily="Arial" FontSize="11" Foreground="White"
        WindowStartupLocation="CenterScreen" ShowInTaskbar="False" RenderTransformOrigin="0.5,0.5" >
@@ -39,12 +39,8 @@
      Executed="CloseCommand_Executed"/>
     </Window.CommandBindings>
 
-
-    <GroupBox FontWeight="Bold" >
-        <GroupBox.Header>
-            <TextBlock FontWeight="Bold" Foreground="Orange" FontSize="16">Half Scheme Details</TextBlock>
-        </GroupBox.Header>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+ 
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-10,0,0,0">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -73,6 +69,6 @@
 
             </Grid>
         </StackPanel>
-    </GroupBox>
+  
 
 </Window>

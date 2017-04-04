@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using TextileApp.Models;
 
 namespace MedicalApp.UserControls
 {
@@ -25,32 +26,22 @@ namespace MedicalApp.UserControls
             this.Resources = rd;
             //disable default Text Search Function
             this.IsTextSearchEnabled = false;
-
-            AutoCompleteTextBoxData atd = new AutoCompleteTextBoxData();
-            atd.Text = "Product1";
-            atd.Value = "1";
-            autoSuggestionList.Add(atd);
-
-            AutoCompleteTextBoxData atd2 = new AutoCompleteTextBoxData();
-            atd2.Text = "Product2";
-            atd2.Value = "2";
-            autoSuggestionList.Add(atd2);
-
-            AutoCompleteTextBoxData atd3 = new AutoCompleteTextBoxData();
-            atd3.Text = "Product3";
-            atd3.Value = "3";
-            autoSuggestionList.Add(atd3);
-
-            AutoCompleteTextBoxData atd4 = new AutoCompleteTextBoxData();
-            atd4.Text = "Product4";
-            atd4.Value = "4";
-            autoSuggestionList.Add(atd4);
-
-            AutoCompleteTextBoxData atd5 = new AutoCompleteTextBoxData();
-            atd5.Text = "Product5";
-            atd5.Value = "5";
-            autoSuggestionList.Add(atd5);
+            objProductMaster = new ProductMasterM();
+            
+            foreach (var item in objProductMaster.ListProductMaster)
+            {
+                AutoCompleteTextBoxData autoCompleteTextBoxData = new AutoCompleteTextBoxData();
+                autoCompleteTextBoxData.Text = item.ProductName + "-" + item.Packing;
+                autoCompleteTextBoxData.Value = Convert.ToString(item.ProductCode);
+                autoSuggestionList.Add(autoCompleteTextBoxData);
+            }
+            
         }
+        #region Property
+        public ProductMasterM objProductMaster { get; set; }
+
+        #endregion Property
+
         public static readonly DependencyProperty ItemsProperty =
             DependencyProperty.Register(
                 "AutoSuggestionList",

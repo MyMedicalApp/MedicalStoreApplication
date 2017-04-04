@@ -14,6 +14,20 @@ using System.Windows.Shapes;
 using Microsoft.Windows.Controls.Primitives;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
+using TextileApp.Views;
+using MedicalApp.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace MedicalApp.Views
 {
@@ -27,12 +41,11 @@ namespace MedicalApp.Views
         public SalesBill()
         {
             InitializeComponent();
+            //SalesBillViewmodel m = new SalesBillViewmodel();
+            SalesBillViewModel salesBillViewModel = new SalesBillViewModel();
+
             items = new ObservableCollection<TestData>();
-            TestData td = new TestData();
-            td.ProductName = "Test";
-            td.BatchNo = "02104";
-            td.Qty = 0;
-            items.Add(td);
+            
              
             SalesBillGrid.ItemsSource = items;
             SalesBillGrid.BeginEdit();
@@ -96,11 +109,12 @@ namespace MedicalApp.Views
         {
             //just accept enter key
             if (e.Key != Key.Enter) return;
-            if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "P Qty")
-            {
-                SchemeDetails schemeDetails = new SchemeDetails();
-                schemeDetails.ShowDialog();
+            if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "Product")
+            {                
+                BatchNumber batchNumber = new BatchNumber();
+                batchNumber.ShowDialog();
             }
+           
             DependencyObject dep = (DependencyObject)e.OriginalSource;
             //here we just find the cell got focused ...
             //then we can use the cell key down or key up
@@ -143,6 +157,11 @@ namespace MedicalApp.Views
                 (nextCell as DataGridCell).IsSelected = true;
                 // start edit mode
                 SalesBillGrid.BeginEdit();
+                if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "P Qty")
+                {
+                    SalesBillGrid.BeginEdit();
+                    return;
+                }
             }
             //handl the default action of keydown
             e.Handled = true;

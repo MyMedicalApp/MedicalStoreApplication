@@ -19,7 +19,15 @@ namespace DAL
                 list.Add(SqlConnManager.GetConnParameters("ProductCode", "ProductCode", 8, GenericDataType.Long, ParameterDirection.Input, objData.ProductCode));
                 SqlConnManager.GetList<T>(sQuery,CommandType.StoredProcedure,list.ToArray(), FillProductMasterDataFromReader, ref  listData);
             }
-            
+
+            public void GetAllListProduct<T>(T objFilter, ref List<T> listData) where T : class, IModel, new()
+            {
+                string sQuery = "sprocGetAllListProduct";
+                ProductMaster objData = objFilter as ProductMaster;
+                List<DbParameter> list = new List<DbParameter>();
+                list.Add(SqlConnManager.GetConnParameters("ProductCode", "ProductCode", 8, GenericDataType.Long, ParameterDirection.Input, objData.ProductCode));
+                SqlConnManager.GetList<T>(sQuery, CommandType.StoredProcedure, list.ToArray(), FillProductMasterDataFromReader, ref  listData);
+            }
             private void FillProductMasterDataFromReader<T>(DbDataReader DbReader, ref List<T> listData) where T : class, IModel, new()
             {
                 while (DbReader.Read())
