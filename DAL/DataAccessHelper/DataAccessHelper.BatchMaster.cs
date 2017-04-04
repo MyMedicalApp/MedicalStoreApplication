@@ -19,6 +19,15 @@ namespace DAL
                 list.Add(SqlConnManager.GetConnParameters("BatchCode", "BatchCode", 8, GenericDataType.Long, ParameterDirection.Input, objData.BatchCode));
                 SqlConnManager.GetList<T>(sQuery,CommandType.StoredProcedure,list.ToArray(), FillBatchMasterDataFromReader, ref  listData);
             }
+
+            public void GetListBatchMasterByProductCode<T>(T objFilter, ref List<T> listData) where T : class, IModel, new()
+            {
+                string sQuery = "sprocGetBatchMasterByProductCode";
+                BatchMaster objData = objFilter as BatchMaster;
+                List<DbParameter> list = new List<DbParameter>();
+                list.Add(SqlConnManager.GetConnParameters("ProductCode", "ProductCode", 8, GenericDataType.Long, ParameterDirection.Input, objData.ProductCode));
+                SqlConnManager.GetList<T>(sQuery, CommandType.StoredProcedure, list.ToArray(), FillBatchMasterDataFromReader, ref  listData);
+            }
             
             private void FillBatchMasterDataFromReader<T>(DbDataReader DbReader, ref List<T> listData) where T : class, IModel, new()
             {
