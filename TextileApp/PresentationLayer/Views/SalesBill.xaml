@@ -5,8 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:UC="clr-namespace:MedicalApp.UserControls"
       xmlns:ViewModels="clr-namespace:MedicalApp.ViewModels" 
-       xmlns:Sorting="clr-namespace:MedicalApp" 
-      Title="SalesBill" KeyDown="Page_KeyDown">
+      xmlns:Sorting="clr-namespace:MedicalApp" WindowTitle="Sale Bill"
+      Style="{DynamicResource WindowStyle}" Margin="15,0,0,0"
+      Title="Sales Bill" KeyDown="Page_KeyDown" Width="1250" Height="700">
     <Page.Resources>
         <DataTemplate x:Key="ProductColumnTemplate">
             <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30"  Text="{Binding Path=ProductName}" HorizontalAlignment="Stretch"  />
@@ -63,43 +64,37 @@
         <Canvas DockPanel.Dock="Top">
             <StackPanel Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <Label HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Content="Bill Series" />
-                    <TextBox Width="150" x:Name="txtBillSeries" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Style="{DynamicResource LabelStyle}" Text="Bill No.:" Width="79" />
+                    <TextBox Width="150" x:Name="txtBillNo" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-                    <Label HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Content="Bill No." />
-                    <TextBox Width="150" x:Name="txtBillNo" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,10,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Bill Date" />
+                    <TextBox Width="150" x:Name="txtBillDate"  Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-                    <Label HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Content="Bill Date" />
-                    <TextBox Width="150" x:Name="txtBillDate" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
-
-                    <Label HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Content="Rate" />
-                    <ComboBox Width="150" x:Name="cmbRate" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" >
-                    </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Customer" />
-                    <TextBox Width="500" x:Name="txtCutomerName" Height="22" VerticalAlignment="Center" KeyDown="txtCutomerName_KeyDown" HorizontalAlignment="Left" />
-                    <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Address" />
-                    <TextBox Width="500" x:Name="txtCutomerAddress" Height="22" VerticalAlignment="Center" KeyDown="txtCutomerAddress_KeyDown" HorizontalAlignment="Left" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,0,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Customer:" Width="79" />
+                    <TextBox Width="493" x:Name="txtCutomerName" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" KeyDown="txtCutomerName_KeyDown" HorizontalAlignment="Left" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,0,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Address:" />
+                    <TextBox Width="539" x:Name="txtCutomerAddress" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" KeyDown="txtCutomerAddress_KeyDown" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="   Doctor" />
-                    <TextBox Width="500" x:Name="txtDoctorName" Height="22" VerticalAlignment="Center" KeyDown="txtDoctorName_KeyDown" HorizontalAlignment="Left" />
-                    <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Address" />
-                    <TextBox Width="500" x:Name="txtDoctorAddress" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" KeyDown="txtDoctorAddress_KeyDown" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,0,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Doctor:" Width="78" />
+                    <TextBox Width="493" x:Name="txtDoctorName" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" KeyDown="txtDoctorName_KeyDown" HorizontalAlignment="Left" />
+                    <TextBlock HorizontalAlignment="Right" Margin="10,0,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Address:" />
+                    <TextBox Width="542" x:Name="txtDoctorAddress" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" KeyDown="txtDoctorAddress_KeyDown" />
                 </StackPanel>
                 <Canvas Height="193">
-                    <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="Product Name" Canvas.Left="76" Canvas.Top="8" />
-                    <UC:AutoCompleteTextBox Height="30" Width="363" IsEditable="True" x:Name="txtProducts" KeyDown="txtGroup_KeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="77" Canvas.Top="33"/>
+                    <TextBlock HorizontalAlignment="Right"  Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Product:" Canvas.Left="11" Canvas.Top="24" Height="30" Width="105" />
+                    <UC:AutoCompleteTextBox Height="40" Width="491" IsEditable="True" x:Name="txtProducts" KeyDown="txtGroup_KeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="98" Canvas.Top="16"/>
 
-                    
+
                     <Sorting:SortableListView Height="150" HorizontalAlignment="Left" KeyDown="BatchNumberGridView_KeyDown"
      	                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10" 
      	                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
      	                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
      	                            SelectionMode="Single"  IsSynchronizedWithCurrentItem="True" 
      	                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
-     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="BatchNumberGridView" Margin="0" Canvas.Top="33" Canvas.Left="492" Width="654">
+     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="BatchNumberGridView" Margin="0" Canvas.Top="14" Canvas.Left="594" Width="632">
                         <Sorting:SortableListView.View>
                             <GridView AllowsColumnReorder="False">
                                 <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
@@ -110,9 +105,10 @@
                             </GridView>
                         </Sorting:SortableListView.View>
                     </Sorting:SortableListView>
-                    <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="P Qty" Canvas.Left="76" Canvas.Top="64" />
-                    <TextBox Width="110" x:Name="txtPQty" KeyDown="txtPQty_KeyDown" Height="31" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="77" Canvas.Top="87">
-                            0<!--<TextBox.InputBindings>
+                    <TextBlock HorizontalAlignment="Right" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="P Qty:" Canvas.Left="24" Canvas.Top="66" />
+                    <TextBox Width="110" x:Name="txtPQty" KeyDown="txtPQty_KeyDown" Height="31"  Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="98" Canvas.Top="60">
+                        1
+                        <!--<TextBox.InputBindings>
                                 <KeyBinding Key="Enter" Command="{Binding Path=QtyKeyDwonCmd}" />
                             </TextBox.InputBindings>-->
                     </TextBox>
@@ -185,7 +181,7 @@
      	                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
      	                            SelectionMode="Single" IsSynchronizedWithCurrentItem="True" 
      	                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
-     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="SalesGridView">
+     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="SalesGridView" Width="1221">
                     <Sorting:SortableListView.View>
                         <GridView AllowsColumnReorder="False">
                             <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>

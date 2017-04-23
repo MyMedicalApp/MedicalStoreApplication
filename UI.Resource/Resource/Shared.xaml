@@ -277,6 +277,50 @@
         </Setter>
     </Style>
 
+    <!-- Modal Window style -->
+    <Style x:Key="WindowStyle" TargetType="{x:Type Page}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+       <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template" >
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Page}">
+                    <Border Background="{TemplateBinding Background}" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="35"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="35"/>
+                            </Grid.RowDefinitions>
+
+                            <!-- Header -->
+                            <Border Grid.Row="0" x:Name="Header" Background="{DynamicResource BackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,0" CornerRadius="5,5,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Foreground="White"  FontSize="20" FontWeight="Bold" Grid.Column="1" Grid.Row="1">SALES BILL</TextBlock>
+                                </Grid>
+                            </Border>
+
+                            <!-- Content -->
+                            <Border Grid.Row="1" Background="{DynamicResource InputBackgroundBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,1,1,1">
+                                <AdornerDecorator>
+                                    <ContentPresenter/>
+                                </AdornerDecorator>
+                            </Border>
+
+                            <!-- Footer -->
+                            <Border Grid.Row="2" Background="{DynamicResource BackgroundBrush}" Height="35" x:Name="Footer" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1,0,1,1" CornerRadius="0,0,5,5"/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- expender style -->
     <!--ExpanderHeaderBorderBrush is used as the Border for Expander header-->
     <LinearGradientBrush x:Key="ExpanderHeaderBorderBrush" EndPoint="0,1" StartPoint="0,0">
