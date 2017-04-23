@@ -21,3 +21,7 @@ E:\a\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.dll
 E:\a\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.pdb
 E:\a\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.dll
 E:\a\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.pdb
+D:\Mohsin\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.dll
+D:\Mohsin\MedicalStoreApplication\UI.Base\bin\Debug\UI.Base.pdb
+D:\Mohsin\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.dll
+D:\Mohsin\MedicalStoreApplication\UI.Base\obj\Debug\UI.Base.pdb

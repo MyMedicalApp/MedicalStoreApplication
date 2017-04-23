@@ -26,7 +26,7 @@ namespace MedicalApp
             //string myString = myFile.ReadToEnd();
             //myFile.Close();
             //Common.ConnctionSetting.ConStr = myString;    
-            Common.ConnctionSetting.ConStr = "Data Source=MAHEN\\SQLEXPRESS;Initial Catalog=2016;User ID=sa;Password=123456";   //;myString;     
+            Common.ConnctionSetting.ConStr = "Data Source=RAJPUROHIT-PC;Initial Catalog=2016;User ID=sa;Password=hussain@123";   //;myString; 
 
             InitializeComponent();
         }

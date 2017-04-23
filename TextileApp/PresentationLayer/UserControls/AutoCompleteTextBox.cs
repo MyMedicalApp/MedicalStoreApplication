@@ -26,15 +26,15 @@ namespace MedicalApp.UserControls
             this.Resources = rd;
             //disable default Text Search Function
             this.IsTextSearchEnabled = false;
-            objProductMaster = new ProductMasterM();
+            //objProductMaster = new ProductMasterM();
             
-            foreach (var item in objProductMaster.ListProductMaster)
-            {
-                AutoCompleteTextBoxData autoCompleteTextBoxData = new AutoCompleteTextBoxData();
-                autoCompleteTextBoxData.Text = item.ProductName + "-" + item.Packing;
-                autoCompleteTextBoxData.Value = Convert.ToString(item.ProductCode);
-                autoSuggestionList.Add(autoCompleteTextBoxData);
-            }
+            //foreach (var item in objProductMaster.ListProductMaster)
+            //{
+            //    AutoCompleteTextBoxData autoCompleteTextBoxData = new AutoCompleteTextBoxData();
+            //    autoCompleteTextBoxData.Text = item.ProductName + "-" + item.Packing;
+            //    autoCompleteTextBoxData.Value = Convert.ToString(item.ProductCode);
+            //    autoSuggestionList.Add(autoCompleteTextBoxData);
+            //}
             
         }
         #region Property
@@ -66,7 +66,7 @@ namespace MedicalApp.UserControls
             if (textBox != null)
             {
                 //disable Autoword selection of the TextBox
-                textBox.AutoWordSelection = false;
+                textBox.AutoWordSelection = true;
                 //handle TextChanged event to dynamically add Combobox items.
                 textBox.TextChanged += new TextChangedEventHandler(textBox_TextChanged);
             }

@@ -26,3 +26,7 @@ E:\a\MedicalStoreApplication\Common\bin\Debug\Common.dll
 E:\a\MedicalStoreApplication\Common\bin\Debug\Common.pdb
 E:\a\MedicalStoreApplication\Common\obj\Debug\Common.dll
 E:\a\MedicalStoreApplication\Common\obj\Debug\Common.pdb
+D:\Mohsin\MedicalStoreApplication\Common\bin\Debug\Common.dll
+D:\Mohsin\MedicalStoreApplication\Common\bin\Debug\Common.pdb
+D:\Mohsin\MedicalStoreApplication\Common\obj\Debug\Common.dll
+D:\Mohsin\MedicalStoreApplication\Common\obj\Debug\Common.pdb

@@ -40,3 +40,10 @@ E:\a\MedicalStoreApplication\Model\bin\Debug\Common.pdb
 E:\a\MedicalStoreApplication\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 E:\a\MedicalStoreApplication\Model\obj\Debug\Model.dll
 E:\a\MedicalStoreApplication\Model\obj\Debug\Model.pdb
+D:\Mohsin\MedicalStoreApplication\Model\bin\Debug\Model.dll
+D:\Mohsin\MedicalStoreApplication\Model\bin\Debug\Model.pdb
+D:\Mohsin\MedicalStoreApplication\Model\bin\Debug\Common.dll
+D:\Mohsin\MedicalStoreApplication\Model\bin\Debug\Common.pdb
+D:\Mohsin\MedicalStoreApplication\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\Mohsin\MedicalStoreApplication\Model\obj\Debug\Model.dll
+D:\Mohsin\MedicalStoreApplication\Model\obj\Debug\Model.pdb

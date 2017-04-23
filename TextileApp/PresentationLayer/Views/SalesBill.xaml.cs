@@ -16,18 +16,7 @@ using System.ComponentModel;
 using System.Collections.ObjectModel;
 using TextileApp.Views;
 using MedicalApp.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using MedicalApp.Model;
 
 namespace MedicalApp.Views
 {
@@ -37,18 +26,35 @@ namespace MedicalApp.Views
     public partial class SalesBill : Page
     {
         public ObservableCollection<TestData> items { get; set; }
-
+        SalesBillViewModel salesBillViewModel = new SalesBillViewModel();
+        BatchMasterViewModel batchMasterViewModel = new BatchMasterViewModel();
+        public SalesBill(BatchMaster batchMaster)
+        {
+            //InitializeComponent();
+            
+            //txtPacking.Text = "1 G";
+            //lbl.Content = "tt";
+            //txtCompany.Text = batchMaster.AccountCode.ToString();
+            //txtMRP.Text = batchMaster.MRP.ToString();
+            //txtBatchNo.Text = batchMaster.BatchNo;
+            //txtExpiryDate.Text = batchMaster.Expiry.ToString();
+        }
         public SalesBill()
         {
             InitializeComponent();
             //SalesBillViewmodel m = new SalesBillViewmodel();
-            SalesBillViewModel salesBillViewModel = new SalesBillViewModel();
-
-            items = new ObservableCollection<TestData>();
+           
+            //this.DataContext =  new SalesBillViewModel();
+            //items = new ObservableCollection<TestData>();
             
              
-            SalesBillGrid.ItemsSource = items;
-            SalesBillGrid.BeginEdit();
+            //SalesBillGrid.ItemsSource = items;
+            //SalesBillGrid.BeginEdit();
+            //SalesGridView.ItemsSource = items;
+
+            //salesBillViewModel.objSalesBillM.ListSalesBillModel = new ObservableCollection<SalesBillModel>();
+            txtProducts.AutoSuggestionList = salesBillViewModel.objProductMaster.AutoSuggestionList;
+            txtCutomerName.Focus();
         }
 
         public class TestData : INotifyPropertyChanged
@@ -105,73 +111,186 @@ namespace MedicalApp.Views
             #endregion
         }
 
-        private void SalesBillGrid_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-            //just accept enter key
-            if (e.Key != Key.Enter) return;
-            if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "Product")
-            {                
-                BatchNumber batchNumber = new BatchNumber();
-                batchNumber.ShowDialog();
-            }
+        //private void SalesBillGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        //{
+        //    //just accept enter key
+        //    if (e.Key != Key.Enter) return;
+        //    if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "Product")
+        //    {                
+        //        //BatchNumber batchNumber = new BatchNumber();
+        //        //batchNumber.ShowDialog();
+        //    }
            
-            DependencyObject dep = (DependencyObject)e.OriginalSource;
-            //here we just find the cell got focused ...
-            //then we can use the cell key down or key up
-            // iteratively traverse the visual tree
-            while ((dep != null) && !(dep is DataGridCell) && !(dep is DataGridColumnHeader))
-            {
-                dep = VisualTreeHelper.GetParent(dep);
-            }
+        //    DependencyObject dep = (DependencyObject)e.OriginalSource;
+        //    //here we just find the cell got focused ...
+        //    //then we can use the cell key down or key up
+        //    // iteratively traverse the visual tree
+        //    while ((dep != null) && !(dep is DataGridCell) && !(dep is DataGridColumnHeader))
+        //    {
+        //        dep = VisualTreeHelper.GetParent(dep);
+        //    }
 
-            if (dep == null)
-                return;
+        //    if (dep == null)
+        //        return;
 
-            if (dep is DataGridCell)
+        //    if (dep is DataGridCell)
+        //    {
+        //        //cancel if datagrid in edit mode
+        //        SalesBillGrid.CancelEdit();
+        //        //get current cell
+        //        DataGridCell cell = dep as DataGridCell;
+        //        //deselect current cell
+        //        cell.IsSelected = false;
+        //        //find next right cell
+        //        var nextCell = cell.PredictFocus(FocusNavigationDirection.Right);
+        //        //if next right cell null go for find next ro first cell
+        //        if (nextCell == null)
+        //        {
+        //            DependencyObject nextRowCell;
+        //            nextRowCell = cell.PredictFocus(FocusNavigationDirection.Down);
+        //            //if next row is null so we have no more row Return;
+        //            if (nextRowCell == null) return;
+        //            //we do this because we cant use FocusNavigationDirection.Next for function PredictFocus
+        //            //so we have to find it this way
+        //            while ((nextRowCell as DataGridCell).PredictFocus(FocusNavigationDirection.Left) != null)
+        //                nextRowCell = (nextRowCell as DataGridCell).PredictFocus(FocusNavigationDirection.Left);
+        //            //set new cell as next cell
+        //            nextCell = nextRowCell;
+        //        }
+        //        //change current cell
+        //        SalesBillGrid.CurrentCell = new DataGridCellInfo(nextCell as DataGridCell);
+        //        //change selected cell
+        //        (nextCell as DataGridCell).IsSelected = true;
+        //        // start edit mode
+        //        SalesBillGrid.BeginEdit();
+        //        if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "P Qty")
+        //        {
+        //            SalesBillGrid.BeginEdit();
+        //            return;
+        //        }
+        //    }
+        //    //handl the default action of keydown
+        //    e.Handled = true;
+        //}
+
+        //private void SalesBillGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        //{
+        //    if (e.EditAction == DataGridEditAction.Commit)
+        //    {
+        //         SalesBillGrid.BeginEdit();
+        //    }
+        //}
+
+        private void txtGroup_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
             {
-                //cancel if datagrid in edit mode
-                SalesBillGrid.CancelEdit();
-                //get current cell
-                DataGridCell cell = dep as DataGridCell;
-                //deselect current cell
-                cell.IsSelected = false;
-                //find next right cell
-                var nextCell = cell.PredictFocus(FocusNavigationDirection.Right);
-                //if next right cell null go for find next ro first cell
-                if (nextCell == null)
-                {
-                    DependencyObject nextRowCell;
-                    nextRowCell = cell.PredictFocus(FocusNavigationDirection.Down);
-                    //if next row is null so we have no more row Return;
-                    if (nextRowCell == null) return;
-                    //we do this because we cant use FocusNavigationDirection.Next for function PredictFocus
-                    //so we have to find it this way
-                    while ((nextRowCell as DataGridCell).PredictFocus(FocusNavigationDirection.Left) != null)
-                        nextRowCell = (nextRowCell as DataGridCell).PredictFocus(FocusNavigationDirection.Left);
-                    //set new cell as next cell
-                    nextCell = nextRowCell;
-                }
-                //change current cell
-                SalesBillGrid.CurrentCell = new DataGridCellInfo(nextCell as DataGridCell);
-                //change selected cell
-                (nextCell as DataGridCell).IsSelected = true;
-                // start edit mode
-                SalesBillGrid.BeginEdit();
-                if ((((System.Windows.Controls.DataGrid)(sender)).CurrentColumn).Header.ToString() == "P Qty")
-                {
-                    SalesBillGrid.BeginEdit();
-                    return;
-                }
+                
+
+                batchMasterViewModel.objBatchMaster.BatchMasterListByProductCode(((MedicalApp.UserControls.AutoCompleteEntry)(txtProducts.SelectedValue)).Value);
+
+                BatchNumberGridView.ItemsSource = batchMasterViewModel.objBatchMaster.ListBatchMaster;
+                BatchNumberGridView.SelectedIndex = 0;
+                BatchNumberGridView.Focus();
+                BatchNumberGridView.ScrollIntoView(BatchNumberGridView.SelectedIndex);
+                
+                //SalesBillModel sbm = new SalesBillModel();
+                //salesBillViewModel.objSalesBillM.ListSalesBillModel[0].MRP = 120;
+                //SalesGridView.ItemsSource = salesBillViewModel.objSalesBillM.ListSalesBillModel;
+                //BatchNumber batchNumber = new BatchNumber(e);
+                //batchNumber.Owner = Window.GetWindow(this);
+                //batchNumber.ShowDialog();
             }
-            //handl the default action of keydown
+        }
+        public void SetFocus(System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+            var uiElement = e.OriginalSource as UIElement;
             e.Handled = true;
+            uiElement.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+            }
+            else if (e.Key == Key.Escape)
+            {
+                var uiElement = e.OriginalSource as UIElement;
+                e.Handled = true;
+                uiElement.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
+            }
         }
 
-        private void SalesBillGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        private void txtDoctorAddress_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.EditAction == DataGridEditAction.Commit)
+            SetFocus(e);
+        }
+
+        private void txtCutomerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            SetFocus(e);
+        }
+
+        private void txtCutomerAddress_KeyDown(object sender, KeyEventArgs e)
+        {
+            SetFocus(e);
+        }
+
+        private void txtDoctorName_KeyDown(object sender, KeyEventArgs e)
+        {
+            SetFocus(e);
+        }
+
+        private void SalesGridView_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            
+        }
+
+        private void BatchNumberGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {   
+                SetFocus(e);
+            }
+        }
+
+        private void txtPQty_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
             {
-                 SalesBillGrid.BeginEdit();
+                SalesBillModel sbm = new SalesBillModel();
+
+                sbm.ProductName = txtProducts.Text;
+                BatchMaster batchMaster = (BatchMaster)BatchNumberGridView.SelectedItem;
+                sbm.BatchNo = batchMaster.BatchNo;
+                sbm.Expiry = batchMaster.Expiry;
+                sbm.MRP = batchMaster.MRP;
+                sbm.Qty = Convert.ToDecimal(txtPQty.Text); 
+                salesBillViewModel.AddNewRow(sbm);
+                SalesGridView.ItemsSource = salesBillViewModel.objSalesBillM.ListSalesBillModel;
+                txtProducts.Text = "A";
+                txtPQty.Text = "0";
+
+                batchMasterViewModel.objBatchMaster.BatchMasterListByProductCode("-1");
+                BatchNumberGridView.ItemsSource = batchMasterViewModel.objBatchMaster.ListBatchMaster;
+                BatchNumberGridView.SelectedIndex = 0;
+                txtProducts.Focus();
+                 
+                SalesGridView.SelectedIndex = salesBillViewModel.objSalesBillM.ListSalesBillModel.Count;
+                //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
+                //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
+                //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
+                //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
+            }
+        }
+
+        private void Page_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.F2)
+            {
+                SalesGridView.Focus();
+                SalesGridView.SelectedIndex = 0;
+            }
+            if (e.Key == Key.Escape)
+            {
+                SetFocus(e);
             }
         }
     }

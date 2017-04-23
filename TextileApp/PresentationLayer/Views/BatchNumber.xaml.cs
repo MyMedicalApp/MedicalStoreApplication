@@ -1,4 +1,6 @@
-﻿using MedicalApp.ViewModels;
+﻿using MedicalApp.Model;
+using MedicalApp.ViewModels;
+using MedicalApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +21,14 @@ namespace TextileApp.Views
     /// </summary>
     public partial class BatchNumber : Window
     {
-        public BatchNumber()
+        System.Windows.Input.KeyEventArgs row;
+        public BatchNumber(System.Windows.Input.KeyEventArgs e)
         {
             InitializeComponent();
             BatchMasterViewModel batchMasterViewModel = new BatchMasterViewModel();
             this.DataContext = batchMasterViewModel;
             this.BatchNumberGridView.Focus();
+            row = e;
         }
 
         private void CloseCommand_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -35,6 +39,14 @@ namespace TextileApp.Views
         private void BatchNumberGridView_KeyDown(object sender, KeyEventArgs e)
         {
             this.Close();
+            //BatchMaster batchMaster = (BatchMaster)BatchNumberGridView.SelectedItem;
+            //SalesBill sb = new SalesBill();
+            //sb.txtPacking.Text = "1 G";
+            //sb.lbl.Content = "tt";
+            //sb.txtCompany.Text = batchMaster.AccountCode.ToString();
+            //sb.txtMRP.Text = batchMaster.MRP.ToString();
+            //sb.txtBatchNo.Text = batchMaster.BatchNo;
+            //sb.txtExpiryDate.Text = batchMaster.Expiry.ToString();
         }
     }
 }

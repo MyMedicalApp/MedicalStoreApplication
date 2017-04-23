@@ -95,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PresentationLayer\Views\BatchNumber.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PresentationLayer\Views\DoctorMaster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,13 +117,22 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PresentationLayer\Models\BatchMaster.cs" />
     <Compile Include="PresentationLayer\Models\DoctorMaster.cs" />
     <Compile Include="PresentationLayer\Models\GenericMaster.cs" />
+    <Compile Include="PresentationLayer\Models\ProductMaster.cs" />
+    <Compile Include="PresentationLayer\Models\SalesBill.cs" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBox.CS" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBoxData.CS" />
+    <Compile Include="PresentationLayer\ViewModels\BatchMasterViewModel.cs" />
+    <Compile Include="PresentationLayer\ViewModels\DemoViewModel.cs" />
     <Compile Include="PresentationLayer\ViewModels\DoctorMasterViewModels.cs" />
     <Compile Include="PresentationLayer\ViewModels\GenericMasterViewModels.cs" />
     <Compile Include="PresentationLayer\ViewModels\MstAccountViewModels.cs" />
+    <Compile Include="PresentationLayer\ViewModels\SalesBillViewModel.cs" />
+    <Compile Include="PresentationLayer\Views\BatchNumber.xaml.cs">
+      <DependentUpon>BatchNumber.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\Views\DoctorMaster.xaml.cs">
       <DependentUpon>DoctorMaster.xaml</DependentUpon>
     </Compile>

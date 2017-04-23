@@ -4,7 +4,61 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:UC="clr-namespace:MedicalApp.UserControls"
-      Title="SalesBill">
+      xmlns:ViewModels="clr-namespace:MedicalApp.ViewModels" 
+       xmlns:Sorting="clr-namespace:MedicalApp" 
+      Title="SalesBill" KeyDown="Page_KeyDown">
+    <Page.Resources>
+        <DataTemplate x:Key="ProductColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30"  Text="{Binding Path=ProductName}" HorizontalAlignment="Stretch"  />
+            <!--<UC:AutoCompleteTextBox Height="30" Width="150" IsEditable="True" x:Name="txtGroup" KeyDown="txtGroup_KeyDown" AutoSuggestionList="{Binding Path=items}" HorizontalAlignment="Left" FontSize="16" Canvas.Left="141" Canvas.Top="7"></UC:AutoCompleteTextBox>-->
+        </DataTemplate>
+        <DataTemplate x:Key="PackingColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=Packing}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="CompanyColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=Company}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="MRPColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=MRP}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="BatchNoColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=BatchNo}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="ExpiryDateColumnTemplate">
+            <TextBlock  FontFamily="Arial"  FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=ExpiryDate}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="QtyColumnTemplate">
+            <TextBlock  FontFamily="Arial"  FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=Qty}" HorizontalAlignment="Stretch"  />
+            <!--<TextBox>
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding RelativeSource= {RelativeSource FindAncestor, AncestorType={x:Type ListBox}}, Path= DataContext.QtyKeyDwonCmd}" />
+                </TextBox.InputBindings>
+            </TextBox>-->
+        </DataTemplate>
+        <DataTemplate x:Key="LoosQtyColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="12" Text="{Binding Path=LoosQty}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+
+
+
+        <DataTemplate x:Key="ExpiryColumnTemplate">
+            <TextBlock  FontFamily="Arial" Foreground="Blue"  FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=Expiry}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <DataTemplate x:Key="StockColumnTemplate">
+            <TextBlock  FontFamily="Arial" FontSize="20" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Height="30" Text="{Binding Path=Stock}" HorizontalAlignment="Stretch"  />
+        </DataTemplate>
+        <Storyboard x:Key="StoryboardEntrance">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="{x:Null}" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="230" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.5000000" Value="-30" KeySpline="1,0,0,1"/>
+                <SplineDoubleKeyFrame KeyTime="00:00:00.7000000" Value="0" KeySpline="0,0,0,1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Page.Resources>
+
+    <Page.DataContext>
+        <ViewModels:SalesBillViewModel />
+    </Page.DataContext>
     <DockPanel>
         <Canvas DockPanel.Dock="Top">
             <StackPanel Orientation="Vertical">
@@ -24,20 +78,51 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Customer" />
-                    <TextBox Width="500" x:Name="txtCutomerName" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBox Width="500" x:Name="txtCutomerName" Height="22" VerticalAlignment="Center" KeyDown="txtCutomerName_KeyDown" HorizontalAlignment="Left" />
                     <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Address" />
-                    <TextBox Width="500" x:Name="txtCutomerAddress" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBox Width="500" x:Name="txtCutomerAddress" Height="22" VerticalAlignment="Center" KeyDown="txtCutomerAddress_KeyDown" HorizontalAlignment="Left" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="   Doctor" />
-                    <TextBox Width="500" x:Name="txtDoctorName" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBox Width="500" x:Name="txtDoctorName" Height="22" VerticalAlignment="Center" KeyDown="txtDoctorName_KeyDown" HorizontalAlignment="Left" />
                     <Label HorizontalAlignment="Right" Margin="10,0,10,10" VerticalAlignment="Center" Content="Address" />
-                    <TextBox Width="500" x:Name="txtDoctorAddress" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    <TextBox Width="500" x:Name="txtDoctorAddress" Height="22" VerticalAlignment="Center" HorizontalAlignment="Left" KeyDown="txtDoctorAddress_KeyDown" />
                 </StackPanel>
+                <Canvas Height="193">
+                    <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="Product Name" Canvas.Left="76" Canvas.Top="8" />
+                    <UC:AutoCompleteTextBox Height="30" Width="363" IsEditable="True" x:Name="txtProducts" KeyDown="txtGroup_KeyDown" HorizontalAlignment="Left" FontSize="16" Canvas.Left="77" Canvas.Top="33"/>
+
+                    
+                    <Sorting:SortableListView Height="150" HorizontalAlignment="Left" KeyDown="BatchNumberGridView_KeyDown"
+     	                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10" 
+     	                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+     	                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
+     	                            SelectionMode="Single"  IsSynchronizedWithCurrentItem="True" 
+     	                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
+     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="BatchNumberGridView" Margin="0" Canvas.Top="33" Canvas.Left="492" Width="654">
+                        <Sorting:SortableListView.View>
+                            <GridView AllowsColumnReorder="False">
+                                <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
+                                <Sorting:SortListViewColumn Header="MRP" CellTemplate="{StaticResource MRPColumnTemplate}" SortProperty="MRP" Width="100" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                                <Sorting:SortListViewColumn Header="BatchNo" CellTemplate="{StaticResource BatchNoColumnTemplate}" SortProperty="BatchNo" Width="120" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                                <Sorting:SortListViewColumn Header="Expiry" CellTemplate="{StaticResource ExpiryColumnTemplate}" SortProperty="NDRX" Width="300" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                                <Sorting:SortListViewColumn Header="Stock" CellTemplate="{StaticResource StockColumnTemplate}" SortProperty="CUser" Width="100" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            </GridView>
+                        </Sorting:SortableListView.View>
+                    </Sorting:SortableListView>
+                    <Label HorizontalAlignment="Right" VerticalAlignment="Center" Content="P Qty" Canvas.Left="76" Canvas.Top="64" />
+                    <TextBox Width="110" x:Name="txtPQty" KeyDown="txtPQty_KeyDown" Height="31" VerticalAlignment="Center" HorizontalAlignment="Left" Canvas.Left="77" Canvas.Top="87">
+                            0<!--<TextBox.InputBindings>
+                                <KeyBinding Key="Enter" Command="{Binding Path=QtyKeyDwonCmd}" />
+                            </TextBox.InputBindings>-->
+                    </TextBox>
+
+
+                </Canvas>
                 <ScrollViewer>
-                    <StackPanel Orientation="Horizontal">
+                    <!--<StackPanel Orientation="Horizontal">
                         <DataGrid Name="SalesBillGrid" AutoGenerateColumns="False" SelectionMode="Single" Margin="20,10,0,0" PreviewKeyDown="SalesBillGrid_PreviewKeyDown" SelectionUnit="Cell" RowHeaderWidth="20" ColumnHeaderHeight="35" RowHeight="25" Background="LightCyan" RowBackground="White" AlternatingRowBackground="Aquamarine" 
-                                  RowEditEnding="SalesBillGrid_RowEditEnding" FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
+                                   FrozenColumnCount="1" VerticalGridLinesBrush="LightBlue" GridLinesVisibility="Vertical" CanUserAddRows="True" CanUserDeleteRows="True" >
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Product" Width="150"  SortMemberPath="ProductName">
                                     <DataGridTemplateColumn.CellTemplate>
@@ -62,7 +147,13 @@
                                 <DataGridTextColumn Binding="{Binding MRP}" Header="MRP" />
                                 <DataGridTextColumn Binding="{Binding BatchNo}" Header="Batch No." />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="ExpiryDate" />
-                                <DataGridTextColumn Binding="{Binding Qty}" Header="P Qty" />
+                                <DataGridTemplateColumn Header="P Qty">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Width="50"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Loos Qty" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Rate" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Amount" />
@@ -78,14 +169,38 @@
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="VAT Amount" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="AdVAT" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="AdVAT" />
-                                <!--<DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Net Rate" />
+                                -->
+                    <!--<DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Net Rate" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Disc. y/n" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Batch Code" />
                                 <DataGridTextColumn Binding="{Binding ExpiryDate}" Header="Pvd Code" />-->
+                    <!--
                             </DataGrid.Columns>
                         </DataGrid>
-                    </StackPanel>
+                    </StackPanel>-->
                 </ScrollViewer>
+                <Sorting:SortableListView  HorizontalAlignment="Left" ItemsSource="{Binding objSalesBillM.ListSalesBillModel, Mode=TwoWay}" 
+     	                            Background="{x:Null}" BorderBrush="Green" BorderThickness="10" KeyDown="SalesGridView_KeyDown" SelectedValue="{Binding CurrentRow}"
+     	                            ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+     	                            VirtualizingStackPanel.IsVirtualizing="True" ScrollViewer.CanContentScroll="True"
+     	                            SelectionMode="Single" IsSynchronizedWithCurrentItem="True" 
+     	                            ItemContainerStyle="{DynamicResource RestaurantEditListViewItemStyle}"
+     	                            Style="{DynamicResource RestaurantEditListViewStyle}" IsEnabled="True" VerticalAlignment="Top" x:Name="SalesGridView">
+                    <Sorting:SortableListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Width="4" HeaderContainerStyle="{DynamicResource FirstColumnGridViewColumnHeader}" CellTemplate="{StaticResource EmptyColumnTemplate}"/>
+                            <Sorting:SortListViewColumn Header="Product" CellTemplate="{StaticResource ProductColumnTemplate}" SortProperty="Product" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="Packing" CellTemplate="{StaticResource PackingColumnTemplate}" SortProperty="Packing" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="Company" CellTemplate="{StaticResource CompanyColumnTemplate}" SortProperty="Company" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="MRP" CellTemplate="{StaticResource MRPColumnTemplate}" SortProperty="MRP" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="Batch No." CellTemplate="{StaticResource BatchNoColumnTemplate}" SortProperty="BatchNo" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="Expiry Date" CellTemplate="{StaticResource ExpiryDateColumnTemplate}" SortProperty="ExpiryDate" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="P Qty" CellTemplate="{StaticResource QtyColumnTemplate}" SortProperty="MRP" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                            <Sorting:SortListViewColumn Header="Loos Qty" CellTemplate="{StaticResource LoosQtyColumnTemplate}" SortProperty="LoosQty" Width="150" SortStyle="RestaurantDataGridViewColumnHeader" HeaderContainerStyle="{DynamicResource RestaurantDataGridViewColumnHeader}" />
+                        </GridView>
+                    </Sorting:SortableListView.View>
+                </Sorting:SortableListView>
+
             </StackPanel>
         </Canvas>
     </DockPanel>
