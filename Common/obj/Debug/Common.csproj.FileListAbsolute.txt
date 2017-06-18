@@ -30,3 +30,4 @@ D:\Mohsin\MedicalStoreApplication\Common\bin\Debug\Common.dll
 D:\Mohsin\MedicalStoreApplication\Common\bin\Debug\Common.pdb
 D:\Mohsin\MedicalStoreApplication\Common\obj\Debug\Common.dll
 D:\Mohsin\MedicalStoreApplication\Common\obj\Debug\Common.pdb
+D:\Mohsin\MedicalStoreApplication\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

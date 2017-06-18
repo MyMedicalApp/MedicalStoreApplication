@@ -389,3 +389,14 @@ D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Vie
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\SchemeDetails.baml
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\BatchNumber.g.cs
 D:\Mohsin\MedicalStoreApplication\TextileApp\obj\x86\Debug\PresentationLayer\Views\BatchNumber.baml
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
+D:\Mohsin\MedicalStoreApplication\TextileApp\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll

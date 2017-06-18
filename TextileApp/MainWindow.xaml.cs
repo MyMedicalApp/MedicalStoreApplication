@@ -61,5 +61,14 @@ namespace MedicalApp
         {
             this.Close();
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.Key == Key.F2)
+            {
+                ((SalesBill)(mainFrame.NavigationService.Content)).SalesGridView.Focus();
+            }
+        }
     }
 }

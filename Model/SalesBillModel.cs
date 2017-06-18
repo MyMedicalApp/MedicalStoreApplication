@@ -10,6 +10,17 @@ namespace MedicalApp.Model
 {
     public class SalesBillModel : IModel, INotifyPropertyChanged
     {
+        private int nSrNo;
+        public int SrNo
+        {
+            get { return nSrNo; }
+            set
+            {
+                nSrNo = value;
+                OnPropertyChanged("SrNo");
+            }
+        }
+
         private string sProductName;
         public string ProductName
         {
@@ -569,6 +580,27 @@ namespace MedicalApp.Model
             {
                 dtLUT = value;
                 OnPropertyChanged("LUT");
+            }
+        }
+
+        private int totalQty;
+        public int TotalQty
+        {
+            get { return this.totalQty; }
+            set
+            {
+                this.totalQty = value;
+                OnPropertyChanged("TotalQty");
+            }
+        }
+        private decimal totalAmount;
+        public decimal TotalAmount
+        {
+            get { return totalAmount; }
+            set
+            {
+                totalAmount = value;
+                OnPropertyChanged("TotalAmount");
             }
         }
         public DataBaseOperation OperationFlag { get; set; }

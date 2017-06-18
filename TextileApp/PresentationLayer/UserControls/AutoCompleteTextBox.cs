@@ -96,6 +96,10 @@ namespace MedicalApp.UserControls
         {
             TextBox textBox = sender as TextBox;
             textBox.AutoWordSelection = false;
+            if (textBox.Text == "@")
+            {
+                textBox.SelectionStart = textBox.Text.Length;
+            }
             // if the word in the textbox is selected, then don't change item collection
             if (textBox.Text != "")
             {

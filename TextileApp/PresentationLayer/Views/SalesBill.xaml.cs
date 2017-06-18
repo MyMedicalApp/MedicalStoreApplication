@@ -17,6 +17,7 @@ using System.Collections.ObjectModel;
 using TextileApp.Views;
 using MedicalApp.ViewModels;
 using MedicalApp.Model;
+using System.Windows.Threading;
 
 namespace MedicalApp.Views
 {
@@ -185,7 +186,7 @@ namespace MedicalApp.Views
         {
             if (e.Key == Key.Enter)
             {
-                
+                SalesBillViewModel.pName = ((MedicalApp.UserControls.AutoCompleteEntry)(txtProducts.SelectedValue)).Text;
 
                 batchMasterViewModel.objBatchMaster.BatchMasterListByProductCode(((MedicalApp.UserControls.AutoCompleteEntry)(txtProducts.SelectedValue)).Value);
 
@@ -240,14 +241,21 @@ namespace MedicalApp.Views
 
         private void SalesGridView_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            
+            if (e.Key == Key.Delete && (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+            {
+                MessageBox.Show("CTRL + SHIFT + TAB trapped");
+            }
         }
 
         private void BatchNumberGridView_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {   
-                SetFocus(e);
+                //SetFocus(e);
+                txtPQty.Focus();
+                txtPQty.Text = "1";
+                //txtPQty.SelectionStart = txtPQty.Text.Length;
+                txtPQty.Select(0, txtPQty.Text.Length);
             }
         }
 
@@ -262,18 +270,21 @@ namespace MedicalApp.Views
                 sbm.BatchNo = batchMaster.BatchNo;
                 sbm.Expiry = batchMaster.Expiry;
                 sbm.MRP = batchMaster.MRP;
-                sbm.Qty = Convert.ToDecimal(txtPQty.Text); 
+                sbm.Qty = Convert.ToDecimal(txtPQty.Text);
                 salesBillViewModel.AddNewRow(sbm);
                 SalesGridView.ItemsSource = salesBillViewModel.objSalesBillM.ListSalesBillModel;
-                txtProducts.Text = "A";
-                txtPQty.Text = "0";
-
+                txtProducts.Text = "@";
+                txtPQty.Text = "";
+                txtTotalQty.Text = SalesBillViewModel.TotalQty.ToString();
+                txtTotalAmount.Text = SalesBillViewModel.TotalAmount.ToString("0.00");
                 batchMasterViewModel.objBatchMaster.BatchMasterListByProductCode("-1");
                 BatchNumberGridView.ItemsSource = batchMasterViewModel.objBatchMaster.ListBatchMaster;
                 BatchNumberGridView.SelectedIndex = 0;
                 txtProducts.Focus();
-                 
+                
                 SalesGridView.SelectedIndex = salesBillViewModel.objSalesBillM.ListSalesBillModel.Count;
+                //txtProducts.selections
+
                 //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
                 //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
                 //salesBillViewModel.CurrentRow.BatchNo = batchMaster.BatchNo;
@@ -293,5 +304,6 @@ namespace MedicalApp.Views
                 SetFocus(e);
             }
         }
+
     }
 }

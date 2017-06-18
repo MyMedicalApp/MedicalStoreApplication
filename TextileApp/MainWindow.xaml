@@ -12,7 +12,7 @@
         xmlns:my="http://schemas.microsoft.com/wpf/2008/toolkit" 
         xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
         Height="{Binding SystemParameters.PrimaryScreenHeight}" 
-    Width="{Binding SystemParameters.PrimaryScreenWidth}" Foreground="White" FontWeight="Bold">
+    Width="{Binding SystemParameters.PrimaryScreenWidth}" KeyDown="Window_KeyDown" Foreground="White" FontWeight="Bold">
     <Window.Resources>
         <Storyboard x:Key="Storyboard1">
             <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="image" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" RepeatBehavior="Forever">
@@ -34,6 +34,7 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
+    
     <StackPanel Orientation="Vertical"> 
         <!-- Menu Area -->
         <Border x:Name="MenuBorder" Background="{DynamicResource HeaderBackgroundBrush}" DockPanel.Dock="Top" Margin="0,5,0,5">
@@ -70,10 +71,10 @@
             </Menu>
         </Border>
         <Canvas Name="MainArea" Height="700" VerticalAlignment="Top">
-
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                      <Frame Height="Auto" x:Name="mainFrame"  HorizontalAlignment="Left" Margin="0,0,0,0"  VerticalAlignment="Top" Width="Auto" NavigationUIVisibility="Hidden" Background="#f2f1e8" />
-
-                    </Canvas>
+            </ScrollViewer>
+        </Canvas>
                  
             
             <Border x:Name="BottomStatusBorder" Background="{DynamicResource HeaderBackgroundBrush}" Height="30" Margin="0,5,0,7">
