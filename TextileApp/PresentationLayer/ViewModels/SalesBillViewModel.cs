@@ -83,7 +83,10 @@ namespace MedicalApp.ViewModels
             saledBillModel.SrNo = objSalesBillM.ListSalesBillModel.Count() + 1;
             objSalesBillM.ListSalesBillModel.Add(saledBillModel);
         }
-
+        public void RemoveRow(SalesBillModel saledBillModel)
+        {
+            objSalesBillM.ListSalesBillModel.Remove(saledBillModel);
+        }
         #endregion
 
         ObservableCollection<BatchMaster> listBatchMaster;

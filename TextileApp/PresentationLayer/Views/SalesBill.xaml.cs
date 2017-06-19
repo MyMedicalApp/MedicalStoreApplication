@@ -241,9 +241,16 @@ namespace MedicalApp.Views
 
         private void SalesGridView_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
+            if (e.Key == Key.Enter)
+            {
+                SetFocus(e);
+            }
             if (e.Key == Key.Delete && (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
             {
-                MessageBox.Show("CTRL + SHIFT + TAB trapped");
+                if (MessageBox.Show("Do you want to delete selected item ?", "Confirmation",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    salesBillViewModel.RemoveRow((SalesBillModel)SalesGridView.SelectedItem);
+                }
             }
         }
 
