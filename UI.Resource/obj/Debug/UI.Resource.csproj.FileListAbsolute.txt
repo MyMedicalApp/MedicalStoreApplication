@@ -258,10 +258,7 @@ E:\a\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.Properties.Resour
 E:\a\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.csproj.GenerateResource.Cache
 E:\a\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.dll
 E:\a\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.pdb
-D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.dll
-D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.pdb
-D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.dll
-D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.pdb
+D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.g.resources
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.csprojResolveAssemblyReference.cache
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Button.baml
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Calendar.baml
@@ -296,8 +293,11 @@ D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\Resource\Window.baml
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource_MarkupCompile.cache
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource_MarkupCompile.lref
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\Themes\Generic.baml
-D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.g.resources
+D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.pdb
+D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.dll
+D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Resource.pdb
+D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.dll
+D:\Mohsin\MedicalStoreApplication\UI.Resource\bin\Debug\UI.Base.pdb
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.Properties.Resources.resources
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.csproj.GenerateResource.Cache
 D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.dll
-D:\Mohsin\MedicalStoreApplication\UI.Resource\obj\Debug\UI.Resource.pdb

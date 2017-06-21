@@ -39,7 +39,13 @@ namespace MedicalApp.ViewModels
         public static string pName { get; set; }
         public static int TotalQty { get; set; }
         public static decimal TotalAmount { get; set; }
-        
+
+        private DateTime billDate = DateTime.Now;
+        public DateTime BillDate
+        {
+            get { return billDate; }
+            set { billDate = value; OnPropertyChanged("BillDate"); }
+        }
         #endregion Property
 
         #region Command 1

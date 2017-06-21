@@ -2780,4 +2780,288 @@
         </DrawingBrush.Drawing>
     </DrawingBrush>
 
+    <Color x:Key="darkBlueColor">#FF00008C</Color>
+    <Color x:Key="lightBlueColor">#FFDDEEFF</Color>
+
+    <SolidColorBrush x:Key="darkBlueSolidBrush" Color="{DynamicResource darkBlueColor}" />
+    <SolidColorBrush x:Key="lightBlueSolidBrush" Color="{DynamicResource lightBlueColor}" />
+
+    <!--**********************************************************************************************
+             DatePicker items styles
+                You cannot call Calender Style from DatePickerStyle. Both must be called from within
+                DatePicker definition, like this:                
+                                    CalendarStyle="{DynamicResource CalendarStyle}"
+                                    Style="{DynamicResource DatePickerStyle}"
+             Also: See the CalendarDayButton & CalendarButtonclass for properties of the buttons
+            **********************************************************************************************-->
+
+    <Style x:Key="datePickerStyle" TargetType="{x:Type DatePicker}">
+        
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Width" Value="148"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource darkBlueSolidBrush}"/>
+        <Setter Property="TextBlock.FontFamily" Value="Microsoft Sans Serif"/>
+        <Setter Property="TextBlock.FontWeight" Value="Normal"/>
+        <Setter Property="TextBlock.FontStyle" Value="Normal"/>
+        <Setter Property="TextBlock.FontSize" Value="18"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Left"/>
+        <Setter Property="TextBlock.LineHeight" Value="24"/>
+        <Setter Property="TextBlock.Foreground" Value="{DynamicResource darkBlueSolidBrush}"/>
+        <Setter Property="TextBlock.Background" Value="{DynamicResource lightBlueSolidBrush}"/>
+    </Style>
+
+    <!--Style for the months of a year button, and years of a decade button.-->
+    <Style x:Key="calendarButtonStyle" TargetType="{x:Type CalendarButton}">
+        <Setter Property="Width" Value="70" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Background" Value="{StaticResource lightBlueSolidBrush}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CalendarButton}">
+                    <Grid>
+                        <Rectangle  x:Name="activeButton"
+                        RadiusX="5" RadiusY="5"
+                        Fill="{TemplateBinding Panel.Background}"
+                        Stroke="{DynamicResource darkBlueSolidBrush}"
+                        StrokeThickness="1"
+                        Opacity="255">
+                        </Rectangle>
+                        <ContentPresenter
+                        Content="{TemplateBinding ContentControl.Content}"
+                        ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                        ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                        HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                        TextElement.Foreground="{DynamicResource darkBlueSolidBrush}">
+                        </ContentPresenter>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsInactive" Value="True">
+                            <Setter Property="Background" Value="LightPink"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="GreenYellow"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Style for CalendarDayButton-->
+    <Style x:Key="calendarDayButtonStyle" TargetType="{x:Type CalendarDayButton}">
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CalendarDayButton}">
+
+                    <Grid>
+                        <Rectangle  x:Name="activeButton"
+                        RadiusX="5" RadiusY="5"
+                        Fill="{TemplateBinding Panel.Background}"
+                        Stroke="{DynamicResource darkBlueSolidBrush}"
+                        StrokeThickness="1"
+                        Opacity="255">
+                        </Rectangle>
+
+                        <ContentPresenter
+                        Content="{TemplateBinding ContentControl.Content}"
+                        ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                        ContentStringFormat="{TemplateBinding ContentControl.ContentStringFormat}"
+                        HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                        TextElement.Foreground="{DynamicResource darkBlueSolidBrush}">
+                        </ContentPresenter>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsToday" Value="True">
+                            <Setter Property="Background" Value="BlanchedAlmond"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsInactive" Value="True">
+                            <Setter Property="Background" Value="LightPink"></Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="GreenYellow"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Style for CalendarItem-->
+    <Style x:Key="itemStyle" TargetType="{x:Type CalendarItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CalendarItem">
+                    <Border x:Name="border" BorderBrush="{DynamicResource darkBlueSolidBrush}" BorderThickness="1">
+                        <DockPanel Name="PART_Root"
+                               LastChildFill="True"
+                               Background="{DynamicResource lightBlueSolidBrush}" >
+
+                            <Button x:Name="PART_PreviousButton" Style="{DynamicResource BlueButtonStyle}"
+                                DockPanel.Dock="Left"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Content="&lt;"
+                                Width="24"
+                                Height="280"
+                                BorderThickness="0,0,2,0"
+                                Foreground="White"
+                                Focusable="False" />
+
+                            <Button x:Name="PART_NextButton" Style="{DynamicResource BlueButtonStyle}"
+                                DockPanel.Dock="Right"
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Content="&gt;"
+                                Width="24"
+                                Height="280"
+                                Foreground="White"
+                                BorderThickness="0,0,0,0"  
+                                Focusable="False" />
+
+                            <Button x:Name="PART_HeaderButton" Style="{DynamicResource BlueButtonStyle}"
+                                DockPanel.Dock="Top"
+                                FontSize="22"
+                                FontWeight="Bold"
+                                Height="40"
+                                Width="280"
+                                Foreground="White"
+                                BorderThickness="0,0,0,2"  
+                                Focusable="False" />
+
+                            <Grid>
+                                <Grid x:Name="PART_MonthView" Visibility="Visible">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+
+                                <Grid x:Name="PART_YearView"  Visibility="Hidden">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                </Grid>
+                            </Grid>
+                            <Rectangle x:Name="PART_DisabledVisual" Opacity="0" Visibility="Collapsed" Fill="#A5FFFFFF"/>
+                        </DockPanel>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="PART_DisabledVisual" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type Calendar}}, Path=DisplayMode}" Value="Year">
+                            <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type Calendar}}, Path=DisplayMode}" Value="Decade">
+                            <Setter TargetName="PART_MonthView" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="PART_YearView" Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Style for Calendar-->
+    <Style x:Key="calendarStyle" TargetType="{x:Type Calendar}">
+        <Setter Property="CalendarDayButtonStyle" Value="{DynamicResource calendarDayButtonStyle}"/>
+        <Setter Property="CalendarButtonStyle" Value="{DynamicResource calendarButtonStyle}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Calendar">
+                    <StackPanel Name="PART_Root"   Orientation="Horizontal">
+                        <CalendarItem
+                        Name="PART_CalendarItem"
+                        Style="{DynamicResource itemStyle}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        VerticalAlignment="Center" />
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Button" 
+
+x:Key="MessageBoxButtonStyle">
+        <Setter Property="Background" 
+
+        Value="Transparent" />
+        <Setter Property="TextBlock.TextAlignment" 
+
+        Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border  Name="Border" CornerRadius="0"  
+
+                    BorderBrush="#000" BorderThickness="1,1,1,1" 
+
+                    Background="{TemplateBinding Background}">
+                        <ContentPresenter x:Name="contentPresenter" 
+
+                        ContentTemplate="{TemplateBinding ContentTemplate}" 
+
+                        Content="{TemplateBinding Content}" 
+
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}" 
+
+                        Margin="{TemplateBinding Padding}" 
+
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

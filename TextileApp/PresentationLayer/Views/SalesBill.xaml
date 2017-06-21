@@ -71,9 +71,12 @@
                     <TextBlock HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Center" Style="{DynamicResource LabelStyle}" Text="Bill No.:" Width="79" />
                     <TextBox Width="150" x:Name="txtBillNo" Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" />
 
-                    <TextBlock HorizontalAlignment="Right" Margin="10,10,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Bill Date" />
-                    <TextBox Width="150" x:Name="txtBillDate"  Style="{DynamicResource TextBoxStyle}" VerticalAlignment="Center" HorizontalAlignment="Left" />
-
+                    <TextBlock HorizontalAlignment="Right" Margin="10,10,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Bill Date:" />
+                    <DatePicker x:Name="dtpBillDate" HorizontalAlignment="Center" Margin="10,10,10,10"
+                                    VerticalAlignment="Center" SelectedDate="{Binding BillDate}"
+                                    CalendarStyle="{DynamicResource calendarStyle}"                                    
+                                    Style="{DynamicResource datePickerStyle}">
+                    </DatePicker>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock HorizontalAlignment="Right" Margin="10,0,10,10" Style="{DynamicResource LabelStyle}" VerticalAlignment="Center" Text="Customer:" Width="79" />

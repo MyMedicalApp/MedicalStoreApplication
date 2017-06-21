@@ -96,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="PresentationLayer\UserControls\WpfMessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PresentationLayer\Views\BatchNumber.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,9 @@
     <Compile Include="PresentationLayer\Models\SalesBill.cs" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBox.CS" />
     <Compile Include="PresentationLayer\UserControls\AutoCompleteTextBoxData.CS" />
+    <Compile Include="PresentationLayer\UserControls\WpfMessageBox.xaml.cs">
+      <DependentUpon>WpfMessageBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PresentationLayer\ViewModels\BatchMasterViewModel.cs" />
     <Compile Include="PresentationLayer\ViewModels\DemoViewModel.cs" />
     <Compile Include="PresentationLayer\ViewModels\DoctorMasterViewModels.cs" />

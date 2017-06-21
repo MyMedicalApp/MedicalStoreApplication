@@ -18,6 +18,7 @@ using TextileApp.Views;
 using MedicalApp.ViewModels;
 using MedicalApp.Model;
 using System.Windows.Threading;
+using MedicalApp.UserControls;
 
 namespace MedicalApp.Views
 {
@@ -54,6 +55,7 @@ namespace MedicalApp.Views
             //SalesGridView.ItemsSource = items;
 
             //salesBillViewModel.objSalesBillM.ListSalesBillModel = new ObservableCollection<SalesBillModel>();
+            //dtpBillDate.SelectedDate = DateTime.Today;
             txtProducts.AutoSuggestionList = salesBillViewModel.objProductMaster.AutoSuggestionList;
             txtCutomerName.Focus();
         }
@@ -247,7 +249,11 @@ namespace MedicalApp.Views
             }
             if (e.Key == Key.Delete && (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
             {
-                if (MessageBox.Show("Do you want to delete selected item ?", "Confirmation",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                var messageBoxResult = TextileApp.PresentationLayer.UserControls.WpfMessageBox.Show("Confirmation", "Are you sure youwant to delete selected item ?",
+                                        MessageBoxButton.YesNo,
+                                       TextileApp.PresentationLayer.UserControls.WpfMessageBox.MessageBoxImage.Question);
+
+                if (messageBoxResult == MessageBoxResult.Yes)
                 {
                     salesBillViewModel.RemoveRow((SalesBillModel)SalesGridView.SelectedItem);
                 }
